@@ -1,0 +1,8 @@
+# Power BI
+*.pbix
+
+# Local configuration
+.vscode/
+
+# Raw datasets
+Dataset/*.csv
