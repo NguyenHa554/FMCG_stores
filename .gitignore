@@ -1,5 +1,5 @@
-# Power BI
-*.pbix
+# # Power BI
+# *.pbix
 
 # Local configuration
 .vscode/
