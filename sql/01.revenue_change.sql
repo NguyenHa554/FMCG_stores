@@ -1,3 +1,4 @@
+create table monthly_revenue_change as
 WITH monthly_revenue AS (
     SELECT
         DATE_FORMAT(s.SalesDate, '%Y-%m') AS SalesMonth,
