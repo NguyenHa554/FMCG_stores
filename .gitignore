@@ -3,6 +3,22 @@
 
 # Local configuration
 .vscode/
+profiles.yml
+target/
+dbt_packages/
+logs/
 
 # Raw datasets
 Dataset/*.csv
+
+#model
+models
+
+dbt_project.yml
+
+profiles.yml.example
+
+requirements.txt
+
+README.md
+
