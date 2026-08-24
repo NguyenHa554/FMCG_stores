@@ -1,6 +1,4 @@
--- Mission 3.1 customer behavior summary.
--- This script aggregates the large sales table by CustomerID first, then joins
--- customer/location dimensions after the data has been reduced.
+
 SET @index_exists := (
     SELECT COUNT(*)
     FROM information_schema.statistics
