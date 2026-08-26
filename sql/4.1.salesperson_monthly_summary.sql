@@ -1,7 +1,3 @@
--- Mission 4.1/4.3 salesperson monthly summary.
--- This script aggregates the large sales table by SalesPersonID and SalesMonth
--- first, then joins the small employee dimension after the data has been reduced.
-
 SET @index_exists := (
     SELECT COUNT(*)
     FROM information_schema.statistics
@@ -48,7 +44,7 @@ SELECT
     COUNT(*) AS total_transactions,
     SUM(s.Quantity) AS total_quantity,
     ROUND(SUM(s.Quantity * p.Price * (1 - s.Discount)), 4) AS total_revenue,
-    ROUND(
+    geographic_city_aggROUND(
         SUM(s.Quantity * p.Price * (1 - s.Discount)) / NULLIF(COUNT(*), 0),
         4
     ) AS avg_revenue_per_transaction
