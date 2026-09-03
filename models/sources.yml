@@ -1,0 +1,57 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: "{{ target.schema }}"
+    tables:
+      - name: sales
+        columns:
+          - name: SalesID
+            tests:
+              - not_null
+              - unique
+          - name: ProductID
+            tests:
+              - not_null
+          - name: CustomerID
+            tests:
+              - not_null
+          - name: SalesPersonID
+            tests:
+              - not_null
+      - name: products
+        columns:
+          - name: ProductID
+            tests:
+              - not_null
+              - unique
+      - name: categories
+        columns:
+          - name: CategoryID
+            tests:
+              - not_null
+              - unique
+      - name: customers
+        columns:
+          - name: CustomerID
+            tests:
+              - not_null
+              - unique
+      - name: cities
+        columns:
+          - name: CityID
+            tests:
+              - not_null
+              - unique
+      - name: countries
+        columns:
+          - name: CountryID
+            tests:
+              - not_null
+              - unique
+      - name: employees
+        columns:
+          - name: EmployeeID
+            tests:
+              - not_null
+              - unique

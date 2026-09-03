@@ -1,0 +1,167 @@
+version: 2
+
+models:
+  - name: monthly_revenue
+    description: Monthly revenue, quantity, and transaction totals.
+    columns:
+      - name: SalesMonth
+        tests:
+          - not_null
+          - unique
+      - name: Revenue
+        tests:
+          - not_null
+
+  - name: monthly_revenue_change
+    description: Month-over-month revenue movement and growth rate.
+    columns:
+      - name: SalesMonth
+        tests:
+          - not_null
+          - unique
+
+  - name: monthly_category_revenue_summary
+    description: Revenue, quantity, and transaction totals by month and category.
+    columns:
+      - name: SalesMonth
+        tests:
+          - not_null
+      - name: CategoryName
+        tests:
+          - not_null
+
+  - name: monthly_category_contribution_summary
+    description: Category revenue contribution as a percentage of monthly revenue.
+    columns:
+      - name: contribution_pct
+        tests:
+          - not_null
+
+  - name: sales_product_agg
+    description: Product-level sales aggregate used by product performance reporting.
+    columns:
+      - name: ProductID
+        tests:
+          - not_null
+          - unique
+
+  - name: product_performance_summary
+    description: Product performance mart for Power BI reporting.
+    columns:
+      - name: ProductID
+        tests:
+          - not_null
+          - unique
+
+  - name: sales_customer_agg
+    description: Customer-level sales aggregate used by customer behavior reporting.
+    columns:
+      - name: CustomerID
+        tests:
+          - not_null
+          - unique
+
+  - name: customer_behavior_summary
+    description: Customer behavior mart enriched with city and country.
+    columns:
+      - name: CustomerID
+        tests:
+          - not_null
+          - unique
+      - name: total_revenue
+        tests:
+          - not_null
+
+  - name: customer_repeat_summary
+    description: Revenue split between repeat customers and one-time buyers.
+    columns:
+      - name: customer_type
+        tests:
+          - not_null
+          - unique
+          - accepted_values:
+              values: ['Repeat Customers', 'One-time Buyers']
+
+  - name: customer_segment_summary
+    description: Customers segmented by average order value and purchase frequency.
+    columns:
+      - name: CustomerID
+        tests:
+          - not_null
+          - unique
+      - name: customer_segment
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - 'VIP Customers'
+                - 'Premium Occasional Customers'
+                - 'Loyal Low-Value Customers'
+                - 'Regular Customers'
+
+  - name: sales_person_monthly_agg
+    description: Salesperson monthly sales aggregate keyed by month and salesperson.
+    columns:
+      - name: SalesMonth
+        tests:
+          - not_null
+      - name: SalesPersonID
+        tests:
+          - not_null
+
+  - name: salesperson_monthly_summary
+    description: Salesperson monthly performance enriched with employee attributes.
+    columns:
+      - name: SalesMonth
+        tests:
+          - not_null
+      - name: SalesPersonID
+        tests:
+          - not_null
+      - name: SalesPersonName
+        tests:
+          - not_null
+
+  - name: salesperson_performance_summary
+    description: Salesperson performance totals across all months.
+    columns:
+      - name: SalesPersonID
+        tests:
+          - not_null
+          - unique
+
+  - name: geographic_revenue_summary
+    description: Revenue and customer metrics aggregated by city and country.
+    columns:
+      - name: CityName
+        tests:
+          - not_null
+      - name: CountryName
+        tests:
+          - not_null
+      - name: total_revenue
+        tests:
+          - not_null
+
+  - name: geographic_revenue_with_region
+    description: City-level geographic revenue tagged with US region.
+    columns:
+      - name: CityName
+        tests:
+          - not_null
+      - name: USRegion
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['West', 'Midwest', 'South', 'Northeast', 'Other / Unknown']
+
+  - name: geographic_region_summary
+    description: Revenue, share, and per-customer metrics aggregated by US region.
+    columns:
+      - name: USRegion
+        tests:
+          - not_null
+          - unique
+      - name: revenue_share_pct
+        tests:
+          - not_null
