@@ -8,7 +8,7 @@ with all_values as (
         USRegion as value_field,
         count(*) as n_records
 
-    from `sales_of_fmcg_stores`.`geographic_revenue_with_region`
+    from "fmcg"."main"."geographic_revenue_with_region"
     group by USRegion
 
 )

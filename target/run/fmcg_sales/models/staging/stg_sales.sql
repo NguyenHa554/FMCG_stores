@@ -1,8 +1,6 @@
 
-  create view `sales_of_fmcg_stores`.`stg_sales__dbt_tmp`
-    
-    
-  as (
+  
+  create view "fmcg"."main"."stg_sales__dbt_tmp" as (
     select
     SalesID,
     SalesPersonID,
@@ -13,5 +11,5 @@
     TotalPrice,
     SalesDate,
     TransactionNumber
-from `sales_of_fmcg_stores`.`sales`
+from "fmcg"."raw"."sales"
   );

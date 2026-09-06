@@ -13,8 +13,8 @@ select
         spa.discounted_quantity * p.Price / nullif(spa.total_quantity, 0),
         6
     ) as revenue_per_unit
-from `sales_of_fmcg_stores`.`sales_product_agg` spa
-join `sales_of_fmcg_stores`.`stg_products` p
+from "fmcg"."main"."sales_product_agg" spa
+join "fmcg"."main"."stg_products" p
     on spa.ProductID = p.ProductID
-join `sales_of_fmcg_stores`.`stg_categories` ca
+join "fmcg"."main"."stg_categories" ca
     on p.CategoryID = ca.CategoryID

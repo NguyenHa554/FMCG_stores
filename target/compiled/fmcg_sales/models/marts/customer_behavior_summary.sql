@@ -10,10 +10,10 @@ select
     sca.avg_order_value,
     sca.first_purchase_date,
     sca.last_purchase_date
-from `sales_of_fmcg_stores`.`sales_customer_agg` sca
-join `sales_of_fmcg_stores`.`stg_customers` c
+from "fmcg"."main"."sales_customer_agg" sca
+join "fmcg"."main"."stg_customers" c
     on sca.CustomerID = c.CustomerID
-join `sales_of_fmcg_stores`.`stg_cities` ci
+join "fmcg"."main"."stg_cities" ci
     on c.CityID = ci.CityID
-join `sales_of_fmcg_stores`.`stg_countries` co
+join "fmcg"."main"."stg_countries" co
     on ci.CountryID = co.CountryID

@@ -9,7 +9,7 @@ select
     sum(total_quantity) as total_quantity,
     sum(total_revenue) as total_revenue,
     round(sum(total_revenue) / nullif(count(*), 0), 4) as avg_revenue_per_transaction
-from `sales_of_fmcg_stores`.`salesperson_monthly_summary`
+from "fmcg"."main"."salesperson_monthly_summary"
 group by
     SalesPersonID,
     SalesPersonName

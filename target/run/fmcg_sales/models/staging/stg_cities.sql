@@ -1,11 +1,9 @@
 
-  create view `sales_of_fmcg_stores`.`stg_cities__dbt_tmp`
-    
-    
-  as (
+  
+  create view "fmcg"."main"."stg_cities__dbt_tmp" as (
     select
     CityID,
     CityName,
     CountryID
-from `sales_of_fmcg_stores`.`cities`
+from "fmcg"."raw"."cities"
   );

@@ -6,7 +6,7 @@ with region_agg as (
         sum(total_transactions) as total_transactions,
         sum(total_quantity) as total_quantity,
         sum(total_revenue) as total_revenue
-    from `sales_of_fmcg_stores`.`geographic_revenue_with_region`
+    from "fmcg"."main"."geographic_revenue_with_region"
     group by USRegion
 ),
 

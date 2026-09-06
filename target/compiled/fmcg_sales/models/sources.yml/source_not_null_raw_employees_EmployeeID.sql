@@ -5,7 +5,7 @@
 
 
 select EmployeeID
-from `sales_of_fmcg_stores`.`employees`
+from "fmcg"."raw"."employees"
 where EmployeeID is null
 
 

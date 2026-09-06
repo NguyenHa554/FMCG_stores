@@ -5,7 +5,7 @@
 
 
 select CityID
-from `sales_of_fmcg_stores`.`cities`
+from "fmcg"."raw"."cities"
 where CityID is null
 
 

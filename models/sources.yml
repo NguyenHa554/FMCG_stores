@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: raw
-    schema: "{{ target.schema }}"
+    schema: raw
     tables:
       - name: sales
         columns:

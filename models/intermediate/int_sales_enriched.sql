@@ -3,7 +3,7 @@ select
     s.TransactionNumber,
     s.SalesDate,
     date(s.SalesDate) as SalesDay,
-    date_format(s.SalesDate, '%Y-%m') as SalesMonth,
+    strftime(s.SalesDate, '%Y-%m') as SalesMonth,
     s.SalesPersonID,
     concat(e.FirstName, ' ', e.LastName) as SalesPersonName,
     s.CustomerID,

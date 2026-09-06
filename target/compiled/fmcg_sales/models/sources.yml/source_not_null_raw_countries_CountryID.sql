@@ -5,7 +5,7 @@
 
 
 select CountryID
-from `sales_of_fmcg_stores`.`countries`
+from "fmcg"."raw"."countries"
 where CountryID is null
 
 

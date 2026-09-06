@@ -8,6 +8,6 @@ select
     spma.total_quantity,
     spma.total_revenue,
     spma.avg_revenue_per_transaction
-from `sales_of_fmcg_stores`.`sales_person_monthly_agg` spma
-join `sales_of_fmcg_stores`.`stg_employees` e
+from "fmcg"."main"."sales_person_monthly_agg" spma
+join "fmcg"."main"."stg_employees" e
     on spma.SalesPersonID = e.EmployeeID

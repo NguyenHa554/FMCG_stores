@@ -5,4 +5,4 @@ select
     LastName,
     CityID,
     Address
-from `sales_of_fmcg_stores`.`customers`
+from "fmcg"."raw"."customers"

@@ -5,7 +5,7 @@
 
 
 select USRegion
-from `sales_of_fmcg_stores`.`geographic_region_summary`
+from "fmcg"."main"."geographic_region_summary"
 where USRegion is null
 
 

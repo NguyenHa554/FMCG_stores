@@ -5,7 +5,7 @@
 
 
 select SalesID
-from `sales_of_fmcg_stores`.`sales`
+from "fmcg"."raw"."sales"
 where SalesID is null
 
 

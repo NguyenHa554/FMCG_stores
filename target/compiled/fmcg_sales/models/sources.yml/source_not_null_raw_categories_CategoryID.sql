@@ -5,7 +5,7 @@
 
 
 select CategoryID
-from `sales_of_fmcg_stores`.`categories`
+from "fmcg"."raw"."categories"
 where CategoryID is null
 
 

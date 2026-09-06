@@ -8,7 +8,7 @@ with all_values as (
         customer_type as value_field,
         count(*) as n_records
 
-    from `sales_of_fmcg_stores`.`customer_repeat_summary`
+    from "fmcg"."main"."customer_repeat_summary"
     group by customer_type
 
 )

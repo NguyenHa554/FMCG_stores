@@ -1,31 +1,23 @@
 
+    
+
+    create  table
+      "fmcg"."main"."sales_person_monthly_agg__dbt_tmp"
   
     
-
-  create  table
-    `sales_of_fmcg_stores`.`sales_person_monthly_agg__dbt_tmp`
-    
-    
-      as
-    
-    (
+    as (
       select
-    date_format(s.SalesDate, '%Y-%m') as SalesMonth,
-    s.SalesPersonID,
+    SalesMonth,
+    SalesPersonID,
     count(*) as total_transactions,
-    sum(s.Quantity) as total_quantity,
-    round(sum(s.Quantity * p.Price * (1 - s.Discount)), 4) as total_revenue,
-    round(
-        sum(s.Quantity * p.Price * (1 - s.Discount)) / nullif(count(*), 0),
-        4
-    ) as avg_revenue_per_transaction
-from `sales_of_fmcg_stores`.`stg_sales` s
-join `sales_of_fmcg_stores`.`stg_products` p
-    on s.ProductID = p.ProductID
-where s.SalesDate is not null
+    sum(Quantity) as total_quantity,
+    round(sum(Revenue), 4) as total_revenue,
+    round(sum(Revenue) / nullif(count(*), 0), 4) as avg_revenue_per_transaction
+from "fmcg"."main"."int_sales_metrics"
+where SalesDate is not null
 group by
-    date_format(s.SalesDate, '%Y-%m'),
-    s.SalesPersonID
-    )
-
+    SalesMonth,
+    SalesPersonID
+    );
+    
   

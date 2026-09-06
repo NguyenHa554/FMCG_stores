@@ -4,5 +4,5 @@ select
     count(*) as total_transactions,
     round(avg(Discount), 6) as avg_discount,
     round(sum(Quantity * (1 - Discount)), 6) as discounted_quantity
-from `sales_of_fmcg_stores`.`int_sales_metrics`
+from "fmcg"."main"."int_sales_metrics"
 group by ProductID

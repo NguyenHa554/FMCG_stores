@@ -1,8 +1,6 @@
 
-  create view `sales_of_fmcg_stores`.`stg_customers__dbt_tmp`
-    
-    
-  as (
+  
+  create view "fmcg"."main"."stg_customers__dbt_tmp" as (
     select
     CustomerID,
     FirstName,
@@ -10,5 +8,5 @@
     LastName,
     CityID,
     Address
-from `sales_of_fmcg_stores`.`customers`
+from "fmcg"."raw"."customers"
   );

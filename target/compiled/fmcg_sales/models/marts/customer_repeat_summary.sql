@@ -5,7 +5,7 @@ with typed_customers as (
             else 'One-time Buyers'
         end as customer_type,
         total_revenue
-    from `sales_of_fmcg_stores`.`customer_behavior_summary`
+    from "fmcg"."main"."customer_behavior_summary"
 )
 
 select
