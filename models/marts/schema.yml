@@ -1,6 +1,25 @@
 version: 2
 
 models:
+  - name: int_sales_metrics
+    description: Narrow transaction-level sales metrics table used to avoid repeated product joins and revenue calculations.
+    columns:
+      - name: SalesID
+        tests:
+          - not_null
+          - unique
+      - name: ProductID
+        tests:
+          - not_null
+
+  - name: int_sales_monthly
+    description: Reusable monthly sales aggregate used by monthly revenue marts.
+    columns:
+      - name: SalesMonth
+        tests:
+          - not_null
+          - unique
+
   - name: monthly_revenue
     description: Monthly revenue, quantity, and transaction totals.
     columns:

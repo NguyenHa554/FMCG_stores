@@ -1,0 +1,510 @@
+==================== 2026-09-05T09:15:29.868936Z | 00000000-0000-0000-0000-000000000000 ====================
+==================== 2026-09-05T09:15:29.869544Z | f69208bf-2a08-4b9b-a2d9-665166923729 ====================
+09:15:29.869613 [info ]: Starting dbt LSP server
+09:15:29.869697 [info ]: Connecting to LSP client on port 8000
+09:15:29.872617 [info ]: Successfully connected to LSP client
+09:15:29.872662 [info ]: Creating LSP service...
+09:15:29.874783 [info ]: Creating LSP server...
+09:15:29.874809 [info ]: Starting LSP server...
+09:15:29.963786 [info ]: Loading ~/.dbt/profiles.yml
+09:15:29.979542 [info ]: Loading ~/.dbt/profiles.yml
+09:15:29.981233 [info ]: Loading ~/.dbt/profiles.yml
+09:17:13.858939 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T09:17:13.896936Z | 1d77a17d-835c-4d42-b07f-2b01ca68c65d ====================
+09:17:13.897149 [info ]: Started loading project
+09:17:13.897797 [info ]: Loading ~/.dbt/profiles.yml
+09:17:13.898157 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+09:17:13.898342 [info ]: Finished loading project [  0.00s]
+09:17:13.898389 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [1ms]
+09:17:18.517261 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T09:17:18.540985Z | 68115361-5ade-419d-b859-cbc811f97f10 ====================
+09:17:18.541107 [info ]: Started loading project
+09:17:18.541822 [info ]: Loading ~/.dbt/profiles.yml
+09:17:18.542060 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+09:17:18.542160 [info ]: Finished loading project [  0.00s]
+09:17:18.542184 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [1ms]
+09:17:19.363418 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T09:17:19.395746Z | d92daf7d-0ac5-41ea-bf12-325987c6cd92 ====================
+09:17:19.395812 [info ]: Started loading project
+09:17:19.396288 [info ]: Loading ~/.dbt/profiles.yml
+09:17:19.396553 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+09:17:19.396642 [info ]: Finished loading project [  0.00s]
+09:17:19.396670 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [923us]
+09:17:31.971434 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T09:17:32.012169Z | e2af1fd5-2356-4a69-badb-d28506640936 ====================
+09:17:32.012253 [info ]: Started loading project
+09:17:32.012863 [info ]: Loading ~/.dbt/profiles.yml
+09:17:32.013110 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+09:17:32.013255 [info ]: Finished loading project [  0.00s]
+09:17:32.013277 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [1ms]
+09:18:52.075676 [info ]: Loading ~/.dbt/profiles.yml
+09:18:52.513265 [info ]: Loading ~/.dbt/profiles.yml
+09:18:57.853980 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T09:20:33.364177Z | 52944e74-3639-4086-961b-63f4a0fcef10 ====================
+09:20:33.364264 [info ]: Started loading project
+09:20:33.364762 [info ]: Loading ~/.dbt/profiles.yml
+09:20:33.365021 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+09:20:33.365082 [info ]: Finished loading project [  0.00s]
+09:20:33.365100 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [923us]
+09:24:15.297504 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T09:24:15.326438Z | fb8fda79-a68c-4b5b-bbca-b8b2e6f3b8a3 ====================
+09:24:15.326504 [info ]: Started loading project
+09:24:15.326930 [info ]: Loading ~/.dbt/profiles.yml
+09:24:15.327153 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+09:24:15.327257 [info ]: Finished loading project [  0.00s]
+09:24:15.327279 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [841us]
+09:24:16.325601 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T09:24:16.340635Z | 322575ae-0b19-47fb-b050-437e33511816 ====================
+09:24:16.340714 [info ]: Started loading project
+09:24:16.341329 [info ]: Loading ~/.dbt/profiles.yml
+09:24:16.341579 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+09:24:16.341721 [info ]: Finished loading project [  0.00s]
+09:24:16.341743 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [1ms]
+==================== 2026-09-05T09:24:18.259661Z | 6347ef38-c264-410f-af6f-7a9333157663 ====================
+09:24:18.259724 [info ]: Started loading project
+09:24:18.260625 [info ]: Loading ~/.dbt/profiles.yml
+09:24:18.260923 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+09:24:18.261027 [info ]: Finished loading project [  0.00s]
+09:24:18.261047 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [1ms]
+==================== 2026-09-05T09:24:25.354948Z | a2d0a26a-33d6-495f-91a3-eb6b703b378e ====================
+09:24:25.355032 [info ]: Started loading project
+09:24:25.355562 [info ]: Loading ~/.dbt/profiles.yml
+09:24:25.355851 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+09:24:25.355951 [info ]: Finished loading project [  0.00s]
+09:24:25.355976 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [1ms]
+09:25:02.764125 [info ]: Loading ~/.dbt/profiles.yml
+09:25:16.127554 [info ]: Loading ~/.dbt/profiles.yml
+09:25:28.224849 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T09:25:28.262296Z | 31759ff7-b3b0-4e43-80f7-51b61f68584d ====================
+09:25:28.262390 [info ]: Started loading project
+09:25:28.262890 [info ]: Loading ~/.dbt/profiles.yml
+09:25:28.263124 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+09:25:28.263211 [info ]: Finished loading project [  0.00s]
+09:25:28.263227 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [931us]
+09:38:08.040302 [info ]: Loading ~/.dbt/profiles.yml
+09:39:17.182141 [info ]: Loading ~/.dbt/profiles.yml
+09:39:17.641823 [info ]: Loading ~/.dbt/profiles.yml
+09:39:18.286537 [info ]: Loading ~/.dbt/profiles.yml
+09:39:19.277743 [info ]: Loading ~/.dbt/profiles.yml
+09:39:30.782019 [info ]: Loading ~/.dbt/profiles.yml
+09:39:47.187374 [info ]: Loading ~/.dbt/profiles.yml
+09:39:47.656885 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T09:41:49.637591Z | 4e4698d4-5cfa-41eb-a7ae-a72ddcddd779 ====================
+09:41:49.637699 [info ]: Started loading project
+09:41:49.638354 [info ]: Loading ~/.dbt/profiles.yml
+09:41:49.638653 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+09:41:49.638731 [info ]: Finished loading project [  0.00s]
+09:41:49.638756 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [1ms]
+==================== 2026-09-05T09:41:56.684384Z | fcbf6202-dd0f-47bf-b9f9-a8a4ca008142 ====================
+09:41:56.684437 [info ]: Started loading project
+09:41:56.684985 [info ]: Loading ~/.dbt/profiles.yml
+09:41:56.685260 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+09:41:56.685333 [info ]: Finished loading project [  0.00s]
+09:41:56.685357 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [973us]
+09:43:54.544887 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T09:43:54.582331Z | c31aa1d6-9435-4f7d-9951-4bfb310b0597 ====================
+09:43:54.582403 [info ]: Started loading project
+09:43:54.582840 [info ]: Loading ~/.dbt/profiles.yml
+09:43:54.583051 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+09:43:54.583105 [info ]: Finished loading project [  0.00s]
+09:43:54.583126 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [794us]
+09:44:10.519479 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T09:44:10.558839Z | 499542ac-f672-48e2-ad6c-c72f6186771e ====================
+09:44:10.558912 [info ]: Started loading project
+09:44:10.559486 [info ]: Loading ~/.dbt/profiles.yml
+09:44:10.559747 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+09:44:10.559832 [info ]: Finished loading project [  0.00s]
+09:44:10.559869 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [1ms]
+09:44:27.764768 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T09:44:27.808266Z | 34c3eea8-9f98-42a0-8bd9-1cf577656f36 ====================
+09:44:27.808405 [info ]: Started loading project
+09:44:27.809156 [info ]: Loading ~/.dbt/profiles.yml
+09:44:27.809402 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+09:44:27.809497 [info ]: Finished loading project [  0.00s]
+09:44:27.809520 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [1ms]
+09:44:34.302624 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T09:44:34.350584Z | cadf6cd8-2cd3-4a5c-a241-de4f18f4eca1 ====================
+09:44:34.350647 [info ]: Started loading project
+09:44:34.351400 [info ]: Loading ~/.dbt/profiles.yml
+09:44:34.351699 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+09:44:34.351769 [info ]: Finished loading project [  0.00s]
+09:44:34.351789 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [1ms]
+09:44:40.306475 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T09:44:40.339804Z | 81da7dfd-3aef-46f9-9023-c1fd704627f7 ====================
+09:44:40.339893 [info ]: Started loading project
+09:44:40.340470 [info ]: Loading ~/.dbt/profiles.yml
+09:44:40.340730 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+09:44:40.340793 [info ]: Finished loading project [  0.00s]
+09:44:40.340816 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [1ms]
+==================== 2026-09-05T09:44:41.812414Z | 23e8f21e-6a0d-4b72-93c6-c49a84ecadab ====================
+09:44:41.812459 [info ]: Started loading project
+09:44:41.812894 [info ]: Loading ~/.dbt/profiles.yml
+09:44:41.813119 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+09:44:41.813227 [info ]: Finished loading project [  0.00s]
+09:44:41.813250 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [835us]
+09:45:00.118744 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T09:45:00.155342Z | 9288fe11-1676-4cf6-9506-b0f45a8fa13a ====================
+09:45:00.155469 [info ]: Started loading project
+09:45:00.156218 [info ]: Loading ~/.dbt/profiles.yml
+09:45:00.156531 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+09:45:00.156639 [info ]: Finished loading project [  0.00s]
+09:45:00.156664 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [1ms]
+09:45:42.780798 [info ]: Loading ~/.dbt/profiles.yml
+09:45:54.772812 [info ]: Loading ~/.dbt/profiles.yml
+09:46:38.558075 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T09:46:38.595610Z | d52cb609-d69b-4c35-b3a3-634393236a42 ====================
+09:46:38.595703 [info ]: Started loading project
+09:46:38.596526 [info ]: Loading ~/.dbt/profiles.yml
+09:46:38.596907 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+09:46:38.597302 [info ]: Finished loading project [  0.00s]
+09:46:38.597329 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [1ms]
+==================== 2026-09-05T09:47:06.566188Z | ace0168d-df40-4baa-8350-e7f937bdfce3 ====================
+09:47:06.566276 [info ]: Started loading project
+09:47:06.566781 [info ]: Loading ~/.dbt/profiles.yml
+09:47:06.567052 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+09:47:06.567119 [info ]: Finished loading project [  0.00s]
+09:47:06.567147 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [958us]
+09:59:31.782450 [info ]: Loading ~/.dbt/profiles.yml
+10:00:21.621324 [info ]: Loading ~/.dbt/profiles.yml
+10:00:45.349067 [info ]: Loading ~/.dbt/profiles.yml
+10:00:46.050228 [info ]: Loading ~/.dbt/profiles.yml
+10:01:53.621390 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T10:01:53.666516Z | bd657b1e-a102-4543-9228-0425646b0703 ====================
+10:01:53.666614 [info ]: Started loading project
+10:01:53.667144 [info ]: Loading ~/.dbt/profiles.yml
+10:01:53.667411 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+10:01:53.667479 [info ]: Finished loading project [  0.00s]
+10:01:53.667507 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [991us]
+==================== 2026-09-05T10:01:55.014303Z | 929b7699-2992-40b5-ade8-98a0faa1d12a ====================
+10:01:55.014355 [info ]: Started loading project
+10:01:55.014799 [info ]: Loading ~/.dbt/profiles.yml
+10:01:55.015025 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+10:01:55.015123 [info ]: Finished loading project [  0.00s]
+10:01:55.015141 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [838us]
+10:02:18.473259 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T10:02:18.527945Z | 90023f44-d0a9-46b6-8458-ed7dd4ffbd6a ====================
+10:02:18.528075 [info ]: Started loading project
+10:02:18.529053 [info ]: Loading ~/.dbt/profiles.yml
+10:02:18.529415 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+10:02:18.529556 [info ]: Finished loading project [  0.00s]
+10:02:18.529585 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [1ms]
+10:02:30.720433 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T10:02:30.759969Z | 8168dffd-871b-46c4-959b-88720c404e6c ====================
+10:02:30.760072 [info ]: Started loading project
+10:02:30.761437 [info ]: Loading ~/.dbt/profiles.yml
+10:02:30.762021 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+10:02:30.762174 [info ]: Finished loading project [  0.00s]
+10:02:30.762198 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [2ms]
+10:02:31.658500 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T10:02:31.692049Z | 1a6ca5ee-2b37-468b-9447-228b76c05c67 ====================
+10:02:31.692113 [info ]: Started loading project
+10:02:31.692594 [info ]: Loading ~/.dbt/profiles.yml
+10:02:31.692814 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+10:02:31.692861 [info ]: Finished loading project [  0.00s]
+10:02:31.692881 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [832us]
+==================== 2026-09-05T10:02:33.537550Z | 917beef6-7ac8-4393-ae06-4debfc93d3d3 ====================
+10:02:33.537624 [info ]: Started loading project
+10:02:33.538528 [info ]: Loading ~/.dbt/profiles.yml
+10:02:33.538944 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+10:02:33.539057 [info ]: Finished loading project [  0.00s]
+10:02:33.539079 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [1ms]
+==================== 2026-09-05T10:02:36.571267Z | c1c34f68-3a50-4936-b847-09231a780536 ====================
+10:02:36.571333 [info ]: Started loading project
+10:02:36.572242 [info ]: Loading ~/.dbt/profiles.yml
+10:02:36.572803 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+10:02:36.572934 [info ]: Finished loading project [  0.00s]
+10:02:36.572973 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [1ms]
+10:02:37.836828 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T10:02:37.867481Z | 6e622404-59cb-471f-8b7d-cb1e9d0c1949 ====================
+10:02:37.867540 [info ]: Started loading project
+10:02:37.868628 [info ]: Loading ~/.dbt/profiles.yml
+10:02:37.868943 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+10:02:37.869007 [info ]: Finished loading project [  0.00s]
+10:02:37.869027 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [1ms]
+10:02:40.736635 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T10:02:40.766514Z | bbf4b86b-cc71-481b-97d9-22719bf539de ====================
+10:02:40.766615 [info ]: Started loading project
+10:02:40.767330 [info ]: Loading ~/.dbt/profiles.yml
+10:02:40.767676 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+10:02:40.767760 [info ]: Finished loading project [  0.00s]
+10:02:40.767787 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [1ms]
+10:02:44.120222 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T10:02:44.158707Z | aa5d4942-2c79-4591-8cb5-3187850b67be ====================
+10:02:44.158768 [info ]: Started loading project
+10:02:44.159366 [info ]: Loading ~/.dbt/profiles.yml
+10:02:44.159590 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+10:02:44.159689 [info ]: Finished loading project [  0.00s]
+10:02:44.159713 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [1ms]
+10:02:47.154779 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T10:02:47.179816Z | 0fad2c7f-c159-4898-9225-259f80198145 ====================
+10:02:47.179878 [info ]: Started loading project
+10:02:47.180290 [info ]: Loading ~/.dbt/profiles.yml
+10:02:47.180505 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+10:02:47.180556 [info ]: Finished loading project [  0.00s]
+10:02:47.180579 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [763us]
+10:02:48.035877 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T10:02:48.071193Z | 5d02cf61-4417-4851-a828-aee1c042a84b ====================
+10:02:48.071249 [info ]: Started loading project
+10:02:48.071854 [info ]: Loading ~/.dbt/profiles.yml
+10:02:48.072223 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+10:02:48.072334 [info ]: Finished loading project [  0.00s]
+10:02:48.072379 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [1ms]
+==================== 2026-09-05T10:02:52.901376Z | 780ae67c-4572-447e-864e-7273584a6dfc ====================
+10:02:52.901436 [info ]: Started loading project
+10:02:52.901890 [info ]: Loading ~/.dbt/profiles.yml
+10:02:52.902136 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+10:02:52.902243 [info ]: Finished loading project [  0.00s]
+10:02:52.902263 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [887us]
+10:02:58.222076 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T10:02:58.274687Z | dea65b38-1494-49af-8c00-6dd7613e2cc6 ====================
+10:02:58.274757 [info ]: Started loading project
+10:02:58.275293 [info ]: Loading ~/.dbt/profiles.yml
+10:02:58.275525 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+10:02:58.275570 [info ]: Finished loading project [  0.00s]
+10:02:58.275590 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [902us]
+12:20:44.631387 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-05T12:20:45.042898Z | 72a711e2-1faf-41b2-8712-20e524c3a429 ====================
+12:20:45.043031 [info ]: Started loading project
+12:20:45.044125 [info ]: Loading ~/.dbt/profiles.yml
+12:20:45.044675 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+12:20:45.044841 [info ]: Finished loading project [  0.00s]
+12:20:45.044874 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [1ms]
+12:20:46.078200 [info ]: Loading ~/.dbt/profiles.yml
+12:20:46.396313 [info ]: Loading ~/.dbt/profiles.yml
+12:32:25.933709 [info ]: Loading ~/.dbt/profiles.yml
+12:32:38.785629 [info ]: Loading ~/.dbt/profiles.yml
+13:12:59.285091 [info ]: Loading ~/.dbt/profiles.yml
+13:13:12.810455 [info ]: Loading ~/.dbt/profiles.yml
+13:13:47.099168 [info ]: Loading ~/.dbt/profiles.yml
+13:14:07.952601 [info ]: Loading ~/.dbt/profiles.yml
+13:14:18.454138 [info ]: Loading ~/.dbt/profiles.yml
+13:14:26.097436 [info ]: Loading ~/.dbt/profiles.yml
+13:14:26.561389 [info ]: Loading ~/.dbt/profiles.yml
+13:15:14.910257 [info ]: Loading ~/.dbt/profiles.yml
+13:15:26.944017 [info ]: Loading ~/.dbt/profiles.yml
+13:15:54.364708 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-06T02:36:57.328142Z | 00000000-0000-0000-0000-000000000000 ====================
+==================== 2026-09-06T02:36:57.335943Z | 684c5c13-ac82-4b3d-9713-f278e917586b ====================
+02:36:57.336518 [info ]: Starting dbt LSP server
+02:36:57.337654 [info ]: Connecting to LSP client on port 8000
+02:36:57.340386 [info ]: Successfully connected to LSP client
+02:36:57.340730 [info ]: Creating LSP service...
+02:36:57.349262 [info ]: Creating LSP server...
+02:36:57.349281 [info ]: Starting LSP server...
+02:36:58.600752 [info ]: Loading ~/.dbt/profiles.yml
+02:36:59.077849 [info ]: Loading ~/.dbt/profiles.yml
+02:36:59.486848 [info ]: Loading ~/.dbt/profiles.yml
+02:42:29.055116 [info ]: Loading ~/.dbt/profiles.yml
+02:42:38.449324 [info ]: Loading ~/.dbt/profiles.yml
+02:42:55.481513 [info ]: Loading ~/.dbt/profiles.yml
+02:42:59.651392 [info ]: Loading ~/.dbt/profiles.yml
+02:43:18.690560 [info ]: Loading ~/.dbt/profiles.yml
+02:43:51.769667 [info ]: Loading ~/.dbt/profiles.yml
+04:14:19.354013 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-06T04:14:20.116097Z | 973fd821-2d93-4d80-8afc-aec847ff2f3d ====================
+04:14:20.121760 [info ]: Started loading project
+04:14:20.152934 [info ]: Loading ~/.dbt/profiles.yml
+04:14:20.165519 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+04:14:20.173224 [info ]: Finished loading project [  0.05s]
+04:14:20.175065 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [58ms]
+04:16:44.538497 [info ]: Loading ~/.dbt/profiles.yml
+04:20:42.026801 [info ]: Loading ~/.dbt/profiles.yml
+04:20:42.736163 [info ]: Loading ~/.dbt/profiles.yml
+04:20:43.248462 [info ]: Loading ~/.dbt/profiles.yml
+04:20:43.701163 [info ]: Loading ~/.dbt/profiles.yml
+04:20:46.163485 [info ]: Loading ~/.dbt/profiles.yml
+04:20:46.598039 [info ]: Loading ~/.dbt/profiles.yml
+04:20:50.581126 [info ]: Loading ~/.dbt/profiles.yml
+04:20:53.501290 [info ]: Loading ~/.dbt/profiles.yml
+04:20:54.317400 [info ]: Loading ~/.dbt/profiles.yml
+04:20:59.049287 [info ]: Loading ~/.dbt/profiles.yml
+04:21:00.164879 [info ]: Loading ~/.dbt/profiles.yml
+04:21:19.327261 [info ]: Loading ~/.dbt/profiles.yml
+04:21:20.285295 [info ]: Loading ~/.dbt/profiles.yml
+04:21:21.298729 [info ]: Loading ~/.dbt/profiles.yml
+04:24:22.481599 [info ]: Loading ~/.dbt/profiles.yml
+04:25:05.275368 [info ]: Loading ~/.dbt/profiles.yml
+04:27:22.074196 [info ]: Loading ~/.dbt/profiles.yml
+04:28:11.648458 [info ]: Loading ~/.dbt/profiles.yml
+04:30:35.785135 [info ]: Loading ~/.dbt/profiles.yml
+04:30:40.532238 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-06T09:21:59.224631Z | 00000000-0000-0000-0000-000000000000 ====================
+==================== 2026-09-06T09:21:59.232195Z | 8f7a65b6-09b1-42c7-8497-a7a95174d9e8 ====================
+09:21:59.232823 [info ]: Starting dbt LSP server
+09:21:59.233992 [info ]: Connecting to LSP client on port 8000
+09:21:59.236512 [info ]: Successfully connected to LSP client
+09:21:59.236847 [info ]: Creating LSP service...
+09:21:59.243939 [info ]: Creating LSP server...
+09:21:59.243956 [info ]: Starting LSP server...
+09:21:59.390509 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-06T09:24:39.199720Z | 00000000-0000-0000-0000-000000000000 ====================
+==================== 2026-09-06T09:24:39.199964Z | d6c29cbf-510a-4680-b6c5-90dc79f85b2f ====================
+09:24:39.199988 [info ]: Starting dbt LSP server
+09:24:39.200015 [info ]: Connecting to LSP client on port 8000
+09:24:39.201608 [info ]: Successfully connected to LSP client
+09:24:39.201631 [info ]: Creating LSP service...
+09:24:39.202773 [info ]: Creating LSP server...
+09:24:39.202786 [info ]: Starting LSP server...
+09:24:39.264438 [info ]: Loading ~/.dbt/profiles.yml
+09:28:50.012341 [info ]: Loading ~/.dbt/profiles.yml
+09:28:58.470617 [info ]: Loading ~/.dbt/profiles.yml
+09:34:15.781249 [info ]: Loading ~/.dbt/profiles.yml
+09:34:48.534312 [info ]: Loading ~/.dbt/profiles.yml
+09:34:49.046769 [info ]: Loading ~/.dbt/profiles.yml
+09:37:30.782083 [info ]: Loading ~/.dbt/profiles.yml
+09:37:39.476766 [info ]: Loading ~/.dbt/profiles.yml
+09:42:39.178991 [info ]: Loading ~/.dbt/profiles.yml
+09:42:47.552821 [info ]: Loading ~/.dbt/profiles.yml
+09:45:37.266481 [info ]: Loading ~/.dbt/profiles.yml
+09:45:55.752976 [info ]: Loading ~/.dbt/profiles.yml
+09:48:03.548793 [info ]: Loading ~/.dbt/profiles.yml
+09:48:21.919305 [info ]: Loading ~/.dbt/profiles.yml
+10:20:17.594223 [info ]: Loading ~/.dbt/profiles.yml
+11:20:41.366680 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-06T11:20:42.028412Z | 59cd3ebf-16fa-4593-a9e2-c26002301fe4 ====================
+11:20:42.036062 [info ]: Started loading project
+11:20:42.082641 [info ]: Loading ~/.dbt/profiles.yml
+11:20:42.103834 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+11:20:42.112352 [info ]: Finished loading project [  0.08s]
+11:20:42.114590 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [86ms]
+11:20:42.277054 [info ]: Loading ~/.dbt/profiles.yml
+11:20:43.248459 [info ]: Loading ~/.dbt/profiles.yml
+11:21:11.497082 [info ]: Loading ~/.dbt/profiles.yml
+11:21:12.062105 [info ]: Loading ~/.dbt/profiles.yml
+11:21:12.555096 [info ]: Loading ~/.dbt/profiles.yml
+11:21:13.412476 [info ]: Loading ~/.dbt/profiles.yml
+11:21:14.454579 [info ]: Loading ~/.dbt/profiles.yml
+11:21:15.265547 [info ]: Loading ~/.dbt/profiles.yml
+11:21:15.773290 [info ]: Loading ~/.dbt/profiles.yml
+11:21:16.278807 [info ]: Loading ~/.dbt/profiles.yml
+11:21:16.968321 [info ]: Loading ~/.dbt/profiles.yml
+11:21:17.427262 [info ]: Loading ~/.dbt/profiles.yml
+11:21:17.886369 [info ]: Loading ~/.dbt/profiles.yml
+11:21:18.403774 [info ]: Loading ~/.dbt/profiles.yml
+11:21:22.117975 [info ]: Loading ~/.dbt/profiles.yml
+11:21:22.807818 [info ]: Loading ~/.dbt/profiles.yml
+11:21:23.091067 [info ]: Loading ~/.dbt/profiles.yml
+11:21:27.501712 [info ]: Loading ~/.dbt/profiles.yml
+11:21:27.974245 [info ]: Loading ~/.dbt/profiles.yml
+11:21:28.820803 [info ]: Loading ~/.dbt/profiles.yml
+11:21:29.688212 [info ]: Loading ~/.dbt/profiles.yml
+11:21:31.044544 [info ]: Loading ~/.dbt/profiles.yml
+11:21:32.289509 [info ]: Loading ~/.dbt/profiles.yml
+11:21:32.736069 [info ]: Loading ~/.dbt/profiles.yml
+11:21:33.251369 [info ]: Loading ~/.dbt/profiles.yml
+11:21:33.750681 [info ]: Loading ~/.dbt/profiles.yml
+11:21:34.258268 [info ]: Loading ~/.dbt/profiles.yml
+11:21:34.700002 [info ]: Loading ~/.dbt/profiles.yml
+11:21:35.205822 [info ]: Loading ~/.dbt/profiles.yml
+11:21:35.726874 [info ]: Loading ~/.dbt/profiles.yml
+11:21:36.228278 [info ]: Loading ~/.dbt/profiles.yml
+11:21:36.738250 [info ]: Loading ~/.dbt/profiles.yml
+11:21:37.243586 [info ]: Loading ~/.dbt/profiles.yml
+11:21:37.736558 [info ]: Loading ~/.dbt/profiles.yml
+11:21:38.244218 [info ]: Loading ~/.dbt/profiles.yml
+11:21:38.745804 [info ]: Loading ~/.dbt/profiles.yml
+11:21:39.618482 [info ]: Loading ~/.dbt/profiles.yml
+11:21:40.288960 [info ]: Loading ~/.dbt/profiles.yml
+11:21:41.779490 [info ]: Loading ~/.dbt/profiles.yml
+11:21:42.097585 [info ]: Loading ~/.dbt/profiles.yml
+11:21:42.632090 [info ]: Loading ~/.dbt/profiles.yml
+11:21:46.724067 [info ]: Loading ~/.dbt/profiles.yml
+11:21:46.977000 [info ]: Loading ~/.dbt/profiles.yml
+11:21:47.486916 [info ]: Loading ~/.dbt/profiles.yml
+11:21:47.979931 [info ]: Loading ~/.dbt/profiles.yml
+11:21:48.788710 [info ]: Loading ~/.dbt/profiles.yml
+11:21:49.377358 [info ]: Loading ~/.dbt/profiles.yml
+11:21:49.944013 [info ]: Loading ~/.dbt/profiles.yml
+11:21:50.460689 [info ]: Loading ~/.dbt/profiles.yml
+11:21:51.553547 [info ]: Loading ~/.dbt/profiles.yml
+11:21:52.551550 [info ]: Loading ~/.dbt/profiles.yml
+11:29:42.371596 [info ]: Loading ~/.dbt/profiles.yml
+11:35:42.668907 [info ]: Loading ~/.dbt/profiles.yml
+12:46:40.152522 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-06T12:46:40.718233Z | b2d6f1dc-69bd-415e-9c8a-a28a3ee9d780 ====================
+12:46:40.718316 [info ]: Started loading project
+12:46:40.719262 [info ]: Loading ~/.dbt/profiles.yml
+12:46:40.719661 [error]: [InvalidConfig (dbt1005)]: Failed to parse profiles.yml: unknown variant `mysql`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `spark`, `databricks`, `salesforce`, `duckdb`, `alt`, `exasol`, `fabric`, `clickhouse`
+12:46:40.719802 [info ]: Finished loading project [  0.00s]
+12:46:40.719820 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error [1ms]
+12:46:41.580263 [info ]: Loading ~/.dbt/profiles.yml
+12:46:44.213093 [info ]: Loading ~/.dbt/profiles.yml
+13:01:24.745274 [info ]: Loading ~/.dbt/profiles.yml

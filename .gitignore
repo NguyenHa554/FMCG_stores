@@ -16,3 +16,6 @@ requirements.txt
 
 
 
+
+# ZCode workspace state
+.zcode/
