@@ -2,7 +2,7 @@ with thresholds as (
     select
         avg(avg_order_value) as avg_aov_threshold,
         avg(total_transactions) as avg_frequency_threshold
-    from `sales_of_fmcg_stores`.`customer_behavior_summary`
+    from "fmcg"."main"."customer_behavior_summary"
 )
 
 select
@@ -32,5 +32,5 @@ select
 
         else 'Regular Customers'
     end as customer_segment
-from `sales_of_fmcg_stores`.`customer_behavior_summary` cbs
+from "fmcg"."main"."customer_behavior_summary" cbs
 cross join thresholds t

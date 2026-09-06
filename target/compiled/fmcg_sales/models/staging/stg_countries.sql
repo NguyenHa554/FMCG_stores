@@ -1,4 +1,4 @@
 select
     CountryID,
     CountryName
-from `sales_of_fmcg_stores`.`countries`
+from "fmcg"."raw"."countries"

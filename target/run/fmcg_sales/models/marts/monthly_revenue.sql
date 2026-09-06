@@ -1,26 +1,17 @@
 
+    
+
+    create  table
+      "fmcg"."main"."monthly_revenue__dbt_tmp"
   
     
-
-  create  table
-    `sales_of_fmcg_stores`.`monthly_revenue__dbt_tmp`
+    as (
+      select
+    SalesMonth,
+    total_revenue as Revenue,
+    total_quantity as Quantity,
+    transaction_count as Transactions
+from "fmcg"."main"."int_sales_monthly"
+    );
     
-    
-      as
-    
-    (
-      
-
-select
-    date_format(s.SalesDate, '%Y-%m') as SalesMonth,
-    sum(s.Quantity * p.Price * (1 - s.Discount)) as Revenue,
-    sum(s.Quantity) as Quantity,
-    count(*) as Transactions
-from `sales_of_fmcg_stores`.`sales` s FORCE INDEX (idx_sales_month_product_metrics)
-join `sales_of_fmcg_stores`.`products` p
-    on s.ProductID = p.ProductID
-where s.SalesDate is not null
-group by date_format(s.SalesDate, '%Y-%m')
-    )
-
   

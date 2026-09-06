@@ -7,6 +7,6 @@ select
     round(avg(Revenue), 4) as avg_order_value,
     min(SalesDate) as first_purchase_date,
     max(SalesDate) as last_purchase_date
-from `sales_of_fmcg_stores`.`int_sales_metrics`
+from "fmcg"."main"."int_sales_metrics"
 where SalesDate is not null
 group by CustomerID

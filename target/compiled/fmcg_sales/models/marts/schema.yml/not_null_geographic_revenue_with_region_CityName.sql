@@ -5,7 +5,7 @@
 
 
 select CityName
-from `sales_of_fmcg_stores`.`geographic_revenue_with_region`
+from "fmcg"."main"."geographic_revenue_with_region"
 where CityName is null
 
 

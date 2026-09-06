@@ -9,7 +9,7 @@ select
     round(sum(total_quantity) / nullif(sum(total_transactions), 0), 4) as avg_quantity_per_transaction,
     round(sum(total_revenue) / nullif(count(*), 0), 4) as revenue_per_customer,
     round(sum(total_transactions) / nullif(count(*), 0), 4) as transactions_per_customer
-from `sales_of_fmcg_stores`.`customer_behavior_summary`
+from "fmcg"."main"."customer_behavior_summary"
 group by
     CityName,
     CountryName

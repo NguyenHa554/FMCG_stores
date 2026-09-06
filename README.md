@@ -45,7 +45,51 @@ Quantity * Price * (1 - Discount)
 - Geographic analysis is mainly city/region based because all mapped sales are in the United States.
 - US region mapping is approximate because the dataset contains `CityName` but does not contain `State`.
 
-## SQL Summary Pipeline
+## dbt + DuckDB Warehouse
+
+The transformation warehouse is **dbt on DuckDB** (migrated from MySQL). All summary tables are dbt models materialized into a single local file, `fmcg.duckdb`:
+
+```text
+Dataset/*.csv  --scripts/load_raw.py-->  fmcg.duckdb (raw schema)
+                                              |
+                            dbt: staging (views) -> intermediate (views) -> marts (tables, main schema)
+```
+
+The full build (25 models + 62 data tests) runs in about 10 seconds; the same pipeline took ~9 minutes for a single model on MySQL.
+
+### Setup
+
+```bash
+py -3.12 -m venv .venv-duckdb
+.venv-duckdb/Scripts/pip install dbt-duckdb   # dbt-core 1.12 + dbt-duckdb 1.11
+```
+
+The dbt profile is `fmcg_sales` / target `duckdb_dev` in `~/.dbt/profiles.yml`, pointing at `fmcg.duckdb` in the project root.
+
+### Run
+
+```bash
+# 1. Load raw CSVs into fmcg.duckdb (idempotent, ~4s for 6.8M rows)
+.venv-duckdb/Scripts/python scripts/load_raw.py
+
+# 2. Build all models + tests
+.venv-duckdb/Scripts/dbt build
+
+# 3. Or run/serve pieces
+.venv-duckdb/Scripts/dbt run --select marts
+.venv-duckdb/Scripts/dbt test
+```
+
+Notes:
+
+- Raw tables live in the `raw` schema (`raw.sales`, `raw.products`, ...); marts land in `main`.
+- DuckDB allows one writer at a time: don't run two `dbt build`s concurrently, and avoid refreshing Power BI while building.
+- `fmcg.duckdb` / `*.duckdb.wal` are gitignored; rebuild them any time with the two commands above.
+- The legacy manual pipeline in `sql/` and the MySQL server are kept for reference/rollback only (see tag `mysql-baseline`).
+
+## SQL Summary Pipeline (legacy, MySQL)
+
+> Superseded by the dbt + DuckDB pipeline above; kept for reference.
 
 The project uses summary tables instead of querying the full sales table directly in Power BI. This improves performance and avoids timeout issues on the 6.7M+ row sales table.
 
@@ -85,6 +129,15 @@ Power BI dashboards are stored in `dashboards/`.
 | `Geographic_summary.pbix` | City, region, and market concentration analysis |
 
 Dashboard screenshots are available in `dashboards/screenshots/`.
+
+### Migrating dashboards to DuckDB (later)
+
+The dashboards currently keep refreshing from the legacy MySQL tables. When ready to move them onto `fmcg.duckdb`:
+
+1. Install the DuckDB ODBC driver (Windows x64) from `github.com/duckdb/duckdb-odbc` releases.
+2. Create a System DSN (ODBC Data Sources (64-bit)) named e.g. `FMCG DuckDB`, pointing the database at the project's `fmcg.duckdb`.
+3. In each PBIX: Power Query -> replace the MySQL source with `Get Data -> ODBC -> FMCG DuckDB`, then re-map tables. Mart table names are identical (`main.monthly_revenue`, `main.customer_behavior_summary`, ...), so remapping is mechanical.
+4. Caveat: DuckDB is single-writer. Close/finish dashboard refreshes before running `dbt build`, or export marts to Parquet and point Power BI at the files instead.
 
 ## Business Insights
 

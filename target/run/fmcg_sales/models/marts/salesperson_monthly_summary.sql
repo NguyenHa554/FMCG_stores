@@ -1,14 +1,11 @@
 
-  
     
 
-  create  table
-    `sales_of_fmcg_stores`.`salesperson_monthly_summary__dbt_tmp`
+    create  table
+      "fmcg"."main"."salesperson_monthly_summary__dbt_tmp"
+  
     
-    
-      as
-    
-    (
+    as (
       select
     spma.SalesMonth,
     e.EmployeeID as SalesPersonID,
@@ -19,9 +16,9 @@
     spma.total_quantity,
     spma.total_revenue,
     spma.avg_revenue_per_transaction
-from `sales_of_fmcg_stores`.`sales_person_monthly_agg` spma
-join `sales_of_fmcg_stores`.`stg_employees` e
+from "fmcg"."main"."sales_person_monthly_agg" spma
+join "fmcg"."main"."stg_employees" e
     on spma.SalesPersonID = e.EmployeeID
-    )
-
+    );
+    
   

@@ -1,4 +1,4 @@
 select
     CategoryID,
     CategoryName
-from `sales_of_fmcg_stores`.`categories`
+from "fmcg"."raw"."categories"

@@ -5,7 +5,7 @@
 
 
 select CustomerID
-from `sales_of_fmcg_stores`.`customers`
+from "fmcg"."raw"."customers"
 where CustomerID is null
 
 

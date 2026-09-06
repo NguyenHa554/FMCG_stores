@@ -44,4 +44,4 @@ select
     avg_quantity_per_transaction,
     revenue_per_customer,
     transactions_per_customer
-from `sales_of_fmcg_stores`.`geographic_revenue_summary`
+from "fmcg"."main"."geographic_revenue_summary"

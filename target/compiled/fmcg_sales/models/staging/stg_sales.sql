@@ -8,4 +8,4 @@ select
     TotalPrice,
     SalesDate,
     TransactionNumber
-from `sales_of_fmcg_stores`.`sales`
+from "fmcg"."raw"."sales"

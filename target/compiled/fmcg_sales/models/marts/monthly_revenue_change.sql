@@ -8,4 +8,4 @@ select
         / nullif(lag(total_revenue) over (order by SalesMonth), 0) * 100,
         2
     ) as growth_rate_pct
-from `sales_of_fmcg_stores`.`int_sales_monthly`
+from "fmcg"."main"."int_sales_monthly"

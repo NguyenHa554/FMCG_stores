@@ -1,14 +1,12 @@
 
-  create view `sales_of_fmcg_stores`.`int_sales_enriched__dbt_tmp`
-    
-    
-  as (
+  
+  create view "fmcg"."main"."int_sales_enriched__dbt_tmp" as (
     select
     s.SalesID,
     s.TransactionNumber,
     s.SalesDate,
     date(s.SalesDate) as SalesDay,
-    date_format(s.SalesDate, '%Y-%m') as SalesMonth,
+    strftime(s.SalesDate, '%Y-%m') as SalesMonth,
     s.SalesPersonID,
     concat(e.FirstName, ' ', e.LastName) as SalesPersonName,
     s.CustomerID,
@@ -26,17 +24,17 @@
     s.Quantity,
     s.Discount,
     s.Quantity * p.Price * (1 - s.Discount) as Revenue
-from `sales_of_fmcg_stores`.`stg_sales` s
-join `sales_of_fmcg_stores`.`stg_products` p
+from "fmcg"."main"."stg_sales" s
+join "fmcg"."main"."stg_products" p
     on s.ProductID = p.ProductID
-join `sales_of_fmcg_stores`.`stg_categories` ca
+join "fmcg"."main"."stg_categories" ca
     on p.CategoryID = ca.CategoryID
-join `sales_of_fmcg_stores`.`stg_customers` c
+join "fmcg"."main"."stg_customers" c
     on s.CustomerID = c.CustomerID
-join `sales_of_fmcg_stores`.`stg_cities` ci
+join "fmcg"."main"."stg_cities" ci
     on c.CityID = ci.CityID
-join `sales_of_fmcg_stores`.`stg_countries` co
+join "fmcg"."main"."stg_countries" co
     on ci.CountryID = co.CountryID
-join `sales_of_fmcg_stores`.`stg_employees` e
+join "fmcg"."main"."stg_employees" e
     on s.SalesPersonID = e.EmployeeID
   );

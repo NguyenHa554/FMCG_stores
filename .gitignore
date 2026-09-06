@@ -13,6 +13,11 @@ requirements.txt
 
 .venv
 .venv-dbt
+.venv-duckdb
+
+# DuckDB warehouse files
+*.duckdb
+*.duckdb.wal
 
 
 
