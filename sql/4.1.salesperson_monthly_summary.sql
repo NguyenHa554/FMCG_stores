@@ -44,7 +44,7 @@ SELECT
     COUNT(*) AS total_transactions,
     SUM(s.Quantity) AS total_quantity,
     ROUND(SUM(s.Quantity * p.Price * (1 - s.Discount)), 4) AS total_revenue,
-    geographic_city_aggROUND(
+    ROUND(
         SUM(s.Quantity * p.Price * (1 - s.Discount)) / NULLIF(COUNT(*), 0),
         4
     ) AS avg_revenue_per_transaction
