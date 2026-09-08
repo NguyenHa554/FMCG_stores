@@ -629,3 +629,441 @@ Finished 'compile' with 1 error [1ms]
 13:17:00.036398 [info ]: Loading ~/.dbt/profiles.yml
 13:33:32.856763 [info ]: Loading ~/.dbt/profiles.yml
 13:36:38.763436 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-09-06T13:59:55.091045Z | 584bfa2c-fb5b-4e3e-90b2-de7030ad9892 ====================
+13:59:55.091155 [info ]: Started loading project
+13:59:55.092001 [info ]: Loading ~/.dbt/profiles.yml
+13:59:55.132068 [debug]:    Started loading packages
+13:59:55.144620 [debug]:     Loaded [  0.01s] packages
+13:59:55.155275 [info ]: Finished loading project [  0.06s]
+13:59:55.162308 [info ]: Started parsing
+13:59:55.245056 [debug]: Finished parsing models/marts/schema.yml [  0.02s]
+13:59:55.253623 [debug]: Finished parsing models/sources.yml [  0.01s]
+13:59:55.296015 [debug]: Finished parsing models/intermediate/int_sales_enriched.sql [  0.03s]
+13:59:55.313233 [debug]: Finished parsing models/intermediate/int_sales_metrics.sql [  0.02s]
+13:59:55.324351 [debug]: Finished parsing models/intermediate/int_sales_monthly.sql [  0.01s]
+13:59:55.335793 [debug]: Finished parsing models/marts/customer_behavior_summary.sql [  0.01s]
+13:59:55.348260 [debug]: Finished parsing models/marts/customer_repeat_summary.sql [  0.01s]
+13:59:55.361540 [debug]: Finished parsing models/marts/customer_segment_summary.sql [  0.01s]
+13:59:55.375084 [debug]: Finished parsing models/marts/geographic_region_summary.sql [  0.01s]
+13:59:55.385559 [debug]: Finished parsing models/marts/geographic_revenue_summary.sql [  0.01s]
+13:59:55.399626 [debug]: Finished parsing models/marts/geographic_revenue_with_region.sql [  0.01s]
+13:59:55.407423 [debug]: Finished parsing models/marts/monthly_category_contribution_summary.sql [  0.01s]
+13:59:55.417601 [debug]: Finished parsing models/marts/monthly_category_revenue_summary.sql [  0.01s]
+13:59:55.427711 [debug]: Finished parsing models/marts/monthly_revenue.sql [  0.01s]
+13:59:55.436138 [debug]: Finished parsing models/marts/monthly_revenue_change.sql [  0.01s]
+13:59:55.448731 [debug]: Finished parsing models/marts/product_performance_summary.sql [  0.01s]
+13:59:55.460182 [debug]: Finished parsing models/marts/sales_customer_agg.sql [  0.01s]
+13:59:55.470441 [debug]: Finished parsing models/marts/sales_person_monthly_agg.sql [  0.01s]
+13:59:55.480793 [debug]: Finished parsing models/marts/sales_product_agg.sql [  0.01s]
+13:59:55.494615 [debug]: Finished parsing models/marts/salesperson_monthly_summary.sql [  0.01s]
+13:59:55.504962 [debug]: Finished parsing models/marts/salesperson_performance_summary.sql [  0.01s]
+13:59:55.514278 [debug]: Finished parsing models/staging/stg_categories.sql [  0.01s]
+13:59:55.524998 [debug]: Finished parsing models/staging/stg_cities.sql [  0.01s]
+13:59:55.534699 [debug]: Finished parsing models/staging/stg_countries.sql [  0.01s]
+13:59:55.545137 [debug]: Finished parsing models/staging/stg_customers.sql [  0.01s]
+13:59:55.554915 [debug]: Finished parsing models/staging/stg_employees.sql [  0.01s]
+13:59:55.563423 [debug]: Finished parsing models/staging/stg_products.sql [  0.01s]
+13:59:55.574584 [debug]: Finished parsing models/staging/stg_sales.sql [  0.01s]
+13:59:55.732832 [info ]: Finished parsing [  0.57s]
+13:59:55.738316 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'duckdb_dev' [647ms]
+==================== 2026-09-06T13:59:55.780386Z | 71da55fb-1826-4a66-8059-07a530e0912d ====================
+13:59:55.780456 [info ]: Started loading project
+13:59:55.780940 [info ]: Loading ~/.dbt/profiles.yml
+13:59:55.787437 [debug]:    Started loading packages
+13:59:55.790675 [debug]:     Loaded [  0.00s] packages
+13:59:55.791665 [info ]: Finished loading project [  0.01s]
+13:59:55.791896 [info ]: Started parsing
+13:59:55.818313 [debug]: Finished parsing models/marts/schema.yml [  0.00s]
+13:59:55.818657 [debug]: Finished parsing models/sources.yml [  0.00s]
+13:59:55.821260 [debug]: Finished parsing models/intermediate/int_sales_enriched.sql [  0.00s]
+13:59:55.821881 [debug]: Finished parsing models/intermediate/int_sales_metrics.sql [  0.00s]
+13:59:55.822789 [debug]: Finished parsing models/intermediate/int_sales_monthly.sql [  0.00s]
+13:59:55.823306 [debug]: Finished parsing models/marts/customer_behavior_summary.sql [  0.00s]
+13:59:55.823832 [debug]: Finished parsing models/marts/customer_repeat_summary.sql [  0.00s]
+13:59:55.824552 [debug]: Finished parsing models/marts/customer_segment_summary.sql [  0.00s]
+13:59:55.825146 [debug]: Finished parsing models/marts/geographic_region_summary.sql [  0.00s]
+13:59:55.825599 [debug]: Finished parsing models/marts/geographic_revenue_summary.sql [  0.00s]
+13:59:55.826325 [debug]: Finished parsing models/marts/geographic_revenue_with_region.sql [  0.00s]
+13:59:55.827226 [debug]: Finished parsing models/marts/monthly_category_contribution_summary.sql [  0.00s]
+13:59:55.827937 [debug]: Finished parsing models/marts/monthly_category_revenue_summary.sql [  0.00s]
+13:59:55.828530 [debug]: Finished parsing models/marts/monthly_revenue.sql [  0.00s]
+13:59:55.829126 [debug]: Finished parsing models/marts/monthly_revenue_change.sql [  0.00s]
+13:59:55.829651 [debug]: Finished parsing models/marts/product_performance_summary.sql [  0.00s]
+13:59:55.829990 [debug]: Finished parsing models/marts/sales_customer_agg.sql [  0.00s]
+13:59:55.830421 [debug]: Finished parsing models/marts/sales_person_monthly_agg.sql [  0.00s]
+13:59:55.830844 [debug]: Finished parsing models/marts/sales_product_agg.sql [  0.00s]
+13:59:55.831366 [debug]: Finished parsing models/marts/salesperson_monthly_summary.sql [  0.00s]
+13:59:55.831768 [debug]: Finished parsing models/marts/salesperson_performance_summary.sql [  0.00s]
+13:59:55.832158 [debug]: Finished parsing models/staging/stg_categories.sql [  0.00s]
+13:59:55.832585 [debug]: Finished parsing models/staging/stg_cities.sql [  0.00s]
+13:59:55.833284 [debug]: Finished parsing models/staging/stg_countries.sql [  0.00s]
+13:59:55.834053 [debug]: Finished parsing models/staging/stg_customers.sql [  0.00s]
+13:59:55.834739 [debug]: Finished parsing models/staging/stg_employees.sql [  0.00s]
+13:59:55.835203 [debug]: Finished parsing models/staging/stg_products.sql [  0.00s]
+13:59:55.835798 [debug]: Finished parsing models/staging/stg_sales.sql [  0.00s]
+13:59:55.968351 [info ]: Loading ~/.dbt/profiles.yml
+13:59:55.971191 [info ]: Finished parsing [  0.18s]
+13:59:55.975403 [info ]: Cached model count updated: 26 models (estimate)
+13:59:55.975426 [info ]: Cached model count updated: 26 models (accurate)
+13:59:55.977083 [info ]: Started scheduling
+13:59:55.981444 [info ]: Finished scheduling [  0.00s]
+13:59:55.982036 [debug]: Compilation - 0 nodes selected: {}
+13:59:55.983334 [warn ]: [NoNodesForSelectionCriteria (dbt1092)]: The selection criterion '' does not match any enabled nodes
+13:59:55.983489 [warn ]: [NoNodesSelected (dbt1601)]: Nothing to do. Try checking your model configs and model specification args
+13:59:55.984164 [info ]: Started scheduling
+13:59:55.985691 [info ]: Finished scheduling [  0.00s]
+13:59:55.989672 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "fmcg", schema: "raw", table: "products" }) and interval: None
+13:59:55.990048 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "fmcg", schema: "raw", table: "categories" }) and interval: None
+13:59:55.990054 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "fmcg", schema: "raw", table: "countries" }) and interval: None
+13:59:55.990058 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "fmcg", schema: "raw", table: "cities" }) and interval: None
+13:59:55.990061 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "fmcg", schema: "raw", table: "customers" }) and interval: None
+13:59:55.990064 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "fmcg", schema: "raw", table: "sales" }) and interval: None
+13:59:55.990067 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "fmcg", schema: "raw", table: "employees" }) and interval: None
+13:59:56.008254 [info ]: Started building task graph
+13:59:56.010347 [info ]: Finished building task graph [  0.00s]
+13:59:56.362661 [info ]: Started scheduling
+13:59:56.362739 [info ]: Finished scheduling [  0.00s]
+13:59:56.363785 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 2 warnings for target 'duckdb_dev' [583ms]
+13:59:56.363864 [info ]: Cached model count updated: 26 models (accurate)
+==================== 2026-09-06T13:59:56.409909Z | 06c83442-163a-4c82-bc82-6bc34467a650 ====================
+13:59:56.409991 [info ]: Started loading project
+13:59:56.410472 [info ]: Loading ~/.dbt/profiles.yml
+13:59:56.434549 [info ]: Cached model count updated: 26 models (estimate)
+13:59:56.434579 [info ]: Cached model count updated: 26 models (accurate)
+13:59:56.434660 [info ]: Started scheduling
+13:59:56.435525 [info ]: Finished scheduling [  0.00s]
+13:59:56.435566 [debug]: Compilation - 8 nodes selected: {"model.fmcg_sales.int_sales_enriched", "model.fmcg_sales.stg_categories", "model.fmcg_sales.stg_cities", "model.fmcg_sales.stg_countries", "model.fmcg_sales.stg_customers", "model.fmcg_sales.stg_employees", "model.fmcg_sales.stg_products", "model.fmcg_sales.stg_sales"}
+13:59:56.439542 [info ]: Started building task graph
+13:59:56.441646 [info ]: Finished building task graph [  0.00s]
+13:59:56.564618 [info ]: Started rendering (8 nodes)
+13:59:56.565281 [info ]: Started model main.int_sales_enriched
+13:59:56.565796 [debug]: Started rendering model main.int_sales_enriched
+13:59:56.566373 [info ]: Started model main.stg_sales
+13:59:56.566390 [debug]: Started rendering model main.stg_sales
+13:59:56.566388 [info ]: Finished loading project [  0.16s]
+13:59:56.566408 [info ]: Started model main.stg_products
+13:59:56.566415 [debug]: Started rendering model main.stg_products
+13:59:56.566425 [info ]: Started model main.stg_employees
+13:59:56.566431 [debug]: Started rendering model main.stg_employees
+13:59:56.566441 [info ]: Started model main.stg_customers
+13:59:56.566450 [debug]: Started rendering model main.stg_customers
+13:59:56.566458 [info ]: Started model main.stg_countries
+13:59:56.566464 [debug]: Started rendering model main.stg_countries
+13:59:56.566473 [info ]: Started model main.stg_cities
+13:59:56.566477 [debug]: Started rendering model main.stg_cities
+13:59:56.566706 [info ]: Started model main.stg_categories
+13:59:56.566734 [debug]: Started rendering model main.stg_categories
+13:59:56.581917 [debug]: Compiled SQL for node model.fmcg_sales.stg_countries at target\.lsp\compiled\fmcg_sales\models\staging\stg_countries.sql
+13:59:56.582694 [debug]: Compiled SQL for node model.fmcg_sales.int_sales_enriched at target\.lsp\compiled\fmcg_sales\models\intermediate\int_sales_enriched.sql
+13:59:56.584120 [debug]: Finished rendering [  0.02s] model main.int_sales_enriched [success]
+13:59:56.584840 [info ]: Started analyzing (8 nodes)
+13:59:56.584869 [debug]: Started analyzing model main.int_sales_enriched
+13:59:56.584918 [debug]: Finished rendering [  0.02s] model main.stg_countries [success]
+13:59:56.584942 [debug]: Started analyzing model main.stg_countries
+13:59:56.585250 [debug]: Compiled SQL for node model.fmcg_sales.stg_products at target\.lsp\compiled\fmcg_sales\models\staging\stg_products.sql
+13:59:56.585260 [debug]: Compiled SQL for node model.fmcg_sales.stg_cities at target\.lsp\compiled\fmcg_sales\models\staging\stg_cities.sql
+13:59:56.585267 [debug]: Compiled SQL for node model.fmcg_sales.stg_customers at target\.lsp\compiled\fmcg_sales\models\staging\stg_customers.sql
+13:59:56.586308 [debug]: Finished rendering [  0.02s] model main.stg_cities [success]
+13:59:56.586359 [debug]: Started analyzing model main.stg_cities
+13:59:56.586713 [debug]: Compiled SQL for node model.fmcg_sales.stg_employees at target\.lsp\compiled\fmcg_sales\models\staging\stg_employees.sql
+13:59:56.587006 [debug]: Finished rendering [  0.02s] model main.stg_products [success]
+13:59:56.587041 [debug]: Started analyzing model main.stg_products
+13:59:56.587073 [debug]: Finished rendering [  0.02s] model main.stg_customers [success]
+13:59:56.587084 [debug]: Started analyzing model main.stg_customers
+13:59:56.587230 [debug]: Compiled SQL for node model.fmcg_sales.stg_categories at target\.lsp\compiled\fmcg_sales\models\staging\stg_categories.sql
+13:59:56.587503 [debug]: Finished rendering [  0.02s] model main.stg_employees [success]
+13:59:56.587567 [debug]: Started analyzing model main.stg_employees
+13:59:56.587590 [debug]: Finished rendering [  0.02s] model main.stg_categories [success]
+13:59:56.587602 [debug]: Started analyzing model main.stg_categories
+13:59:56.588107 [debug]: Compiled SQL for node model.fmcg_sales.stg_sales at target\.lsp\compiled\fmcg_sales\models\staging\stg_sales.sql
+13:59:56.588657 [debug]: Finished rendering [  0.02s] model main.stg_sales [success]
+13:59:56.588693 [info ]: Finished rendering [  0.02s] (8 nodes, 0 skipped, 0 errors)
+13:59:56.588724 [debug]: Started analyzing model main.stg_sales
+13:59:56.627855 [debug]: Finished analyzing [  0.04s] model main.stg_categories [success]
+13:59:56.627891 [info ]:  Succeeded [  0.06s] model main.stg_categories (view)
+13:59:56.627934 [debug]: Finished analyzing [  0.04s] model main.stg_employees [success]
+13:59:56.627949 [info ]:  Succeeded [  0.06s] model main.stg_employees (view)
+13:59:56.627969 [debug]: Finished analyzing [  0.04s] model main.stg_customers [success]
+13:59:56.627983 [info ]:  Succeeded [  0.06s] model main.stg_customers (view)
+13:59:56.627999 [debug]: Finished analyzing [  0.04s] model main.stg_countries [success]
+13:59:56.628007 [info ]:  Succeeded [  0.06s] model main.stg_countries (view)
+13:59:56.628021 [debug]: Finished analyzing [  0.04s] model main.stg_cities [success]
+13:59:56.628031 [info ]:  Succeeded [  0.06s] model main.stg_cities (view)
+13:59:56.628332 [debug]: Finished analyzing [  0.04s] model main.stg_products [success]
+13:59:56.628352 [info ]:  Succeeded [  0.06s] model main.stg_products (view)
+13:59:56.628369 [debug]: Finished analyzing [  0.04s] model main.stg_sales [success]
+13:59:56.628375 [info ]:  Succeeded [  0.06s] model main.stg_sales (view)
+13:59:56.632462 [debug]: Finished analyzing [  0.05s] model main.int_sales_enriched [success]
+13:59:56.632492 [info ]: Finished analyzing [  0.05s] (8 nodes, 0 skipped, 0 errors)
+13:59:56.632501 [info ]:  Succeeded [  0.07s] model main.int_sales_enriched (view)
+13:59:56.636256 [info ]: Started scheduling
+13:59:56.636335 [info ]: Finished scheduling [  0.00s]
+13:59:56.636393 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'duckdb_dev' [226ms]
+Processed: 8 models
+Summary: 8 total | 8 success
+13:59:56.636906 [info ]: Cached model count updated: 26 models (accurate)
+==================== 2026-09-06T13:59:58.203757Z | eb19bd7f-2d21-48ff-b439-a9dcb270b8f2 ====================
+13:59:58.203866 [info ]: Started loading project
+13:59:58.204737 [info ]: Loading ~/.dbt/profiles.yml
+13:59:58.242097 [info ]: Cached model count updated: 26 models (estimate)
+13:59:58.242134 [info ]: Cached model count updated: 26 models (accurate)
+13:59:58.242352 [info ]: Started scheduling
+13:59:58.242723 [info ]: Finished scheduling [  0.00s]
+13:59:58.242776 [debug]: Compilation - 26 nodes selected: {"model.fmcg_sales.customer_behavior_summary", "model.fmcg_sales.customer_repeat_summary", "model.fmcg_sales.customer_segment_summary", "model.fmcg_sales.geographic_region_summary", "model.fmcg_sales.geographic_revenue_summary", "model.fmcg_sales.geographic_revenue_with_region", "model.fmcg_sales.int_sales_enriched", "model.fmcg_sales.int_sales_metrics", "model.fmcg_sales.int_sales_monthly", "model.fmcg_sales.monthly_category_contribution_summary", "model.fmcg_sales.monthly_category_revenue_summary", "model.fmcg_sales.monthly_revenue", "model.fmcg_sales.monthly_revenue_change", "model.fmcg_sales.product_performance_summary", "model.fmcg_sales.sales_customer_agg", "model.fmcg_sales.sales_person_monthly_agg", "model.fmcg_sales.sales_product_agg", "model.fmcg_sales.salesperson_monthly_summary", "model.fmcg_sales.salesperson_performance_summary", "model.fmcg_sales.stg_categories", "model.fmcg_sales.stg_cities", "model.fmcg_sales.stg_countries", "model.fmcg_sales.stg_customers", "model.fmcg_sales.stg_employees", "model.fmcg_sales.stg_products", "model.fmcg_sales.stg_sales"}
+13:59:58.245660 [info ]: Started building task graph
+13:59:58.245946 [info ]: Finished building task graph [  0.00s]
+13:59:58.468004 [info ]: Cached model count updated: 26 models (accurate)
+13:59:58.468108 [info ]: Finished loading project [  0.26s]
+13:59:58.468138 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'duckdb_dev' [264ms]
+Processed: 26 models
+==================== 2026-09-06T13:59:58.486107Z | 2d743133-ff85-48aa-85d2-b1673625298d ====================
+13:59:58.486280 [info ]: Started loading project
+13:59:58.487321 [info ]: Loading ~/.dbt/profiles.yml
+13:59:58.512892 [info ]: Cached model count updated: 26 models (estimate)
+13:59:58.512921 [info ]: Cached model count updated: 26 models (accurate)
+13:59:58.512998 [info ]: Started scheduling
+13:59:58.513152 [info ]: Finished scheduling [  0.00s]
+13:59:58.513172 [debug]: Compilation - 1 nodes selected: {"model.fmcg_sales.int_sales_metrics"}
+13:59:58.515240 [info ]: Started building task graph
+13:59:58.515329 [info ]: Finished building task graph [  0.00s]
+13:59:58.679961 [info ]: Started rendering (1 nodes)
+13:59:58.680018 [info ]: Started model main.int_sales_metrics
+13:59:58.680029 [debug]: Started rendering model main.int_sales_metrics
+13:59:58.680121 [info ]: Finished loading project [  0.19s]
+13:59:58.683346 [debug]: Compiled SQL for node model.fmcg_sales.int_sales_metrics at target\.lsp\compiled\fmcg_sales\models\intermediate\int_sales_metrics.sql
+13:59:58.683526 [debug]: Finished rendering [  0.00s] model main.int_sales_metrics [success]
+13:59:58.683553 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+13:59:58.683585 [info ]: Started analyzing (1 nodes)
+13:59:58.683598 [debug]: Started analyzing model main.int_sales_metrics
+13:59:58.684527 [debug]: Finished analyzing [  0.00s] model main.int_sales_metrics [success]
+13:59:58.684556 [info ]: Finished analyzing [  0.00s] (1 nodes, 0 skipped, 0 errors)
+13:59:58.684568 [info ]:  Succeeded [  0.00s] model main.int_sales_metrics (table)
+13:59:58.689009 [info ]: Started scheduling
+13:59:58.689124 [info ]: Finished scheduling [  0.00s]
+13:59:58.689177 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'duckdb_dev' [203ms]
+Processed: 1 model
+Summary: 1 total | 1 success
+13:59:58.689250 [info ]: Cached model count updated: 26 models (accurate)
+==================== 2026-09-06T14:00:00.242880Z | 4ba9399a-e8ab-4580-8c01-bc619ec320ed ====================
+14:00:00.242993 [info ]: Started loading project
+14:00:00.243527 [info ]: Loading ~/.dbt/profiles.yml
+14:00:00.264668 [info ]: Cached model count updated: 26 models (estimate)
+14:00:00.264689 [info ]: Cached model count updated: 26 models (accurate)
+14:00:00.264733 [info ]: Started scheduling
+14:00:00.264939 [info ]: Finished scheduling [  0.00s]
+14:00:00.264959 [debug]: Compilation - 26 nodes selected: {"model.fmcg_sales.customer_behavior_summary", "model.fmcg_sales.customer_repeat_summary", "model.fmcg_sales.customer_segment_summary", "model.fmcg_sales.geographic_region_summary", "model.fmcg_sales.geographic_revenue_summary", "model.fmcg_sales.geographic_revenue_with_region", "model.fmcg_sales.int_sales_enriched", "model.fmcg_sales.int_sales_metrics", "model.fmcg_sales.int_sales_monthly", "model.fmcg_sales.monthly_category_contribution_summary", "model.fmcg_sales.monthly_category_revenue_summary", "model.fmcg_sales.monthly_revenue", "model.fmcg_sales.monthly_revenue_change", "model.fmcg_sales.product_performance_summary", "model.fmcg_sales.sales_customer_agg", "model.fmcg_sales.sales_person_monthly_agg", "model.fmcg_sales.sales_product_agg", "model.fmcg_sales.salesperson_monthly_summary", "model.fmcg_sales.salesperson_performance_summary", "model.fmcg_sales.stg_categories", "model.fmcg_sales.stg_cities", "model.fmcg_sales.stg_countries", "model.fmcg_sales.stg_customers", "model.fmcg_sales.stg_employees", "model.fmcg_sales.stg_products", "model.fmcg_sales.stg_sales"}
+14:00:00.266292 [info ]: Started building task graph
+14:00:00.266448 [info ]: Finished building task graph [  0.00s]
+14:00:00.374316 [info ]: Started rendering (26 nodes)
+14:00:00.374351 [info ]: Started model main.salesperson_performance_summary
+14:00:00.374360 [debug]: Started rendering model main.salesperson_performance_summary
+14:00:00.374384 [info ]: Started model main.salesperson_monthly_summary
+14:00:00.374391 [debug]: Started rendering model main.salesperson_monthly_summary
+14:00:00.374403 [info ]: Started model main.sales_person_monthly_agg
+14:00:00.374414 [debug]: Started rendering model main.sales_person_monthly_agg
+14:00:00.374415 [info ]: Finished loading project [  0.13s]
+14:00:00.374425 [info ]: Started model main.product_performance_summary
+14:00:00.374432 [debug]: Started rendering model main.product_performance_summary
+14:00:00.374443 [info ]: Started model main.sales_product_agg
+14:00:00.374451 [debug]: Started rendering model main.sales_product_agg
+14:00:00.374471 [info ]: Started model main.monthly_revenue_change
+14:00:00.374477 [debug]: Started rendering model main.monthly_revenue_change
+14:00:00.374488 [info ]: Started model main.monthly_revenue
+14:00:00.374494 [debug]: Started rendering model main.monthly_revenue
+14:00:00.374510 [info ]: Started model main.monthly_category_contribution_summary
+14:00:00.374518 [debug]: Started rendering model main.monthly_category_contribution_summary
+14:00:00.374531 [info ]: Started model main.monthly_category_revenue_summary
+14:00:00.374536 [debug]: Started rendering model main.monthly_category_revenue_summary
+14:00:00.374547 [info ]: Started model main.int_sales_monthly
+14:00:00.374553 [debug]: Started rendering model main.int_sales_monthly
+14:00:00.374568 [info ]: Started model main.int_sales_enriched
+14:00:00.374576 [debug]: Started rendering model main.int_sales_enriched
+14:00:00.374587 [info ]: Started model main.stg_sales
+14:00:00.374594 [debug]: Started rendering model main.stg_sales
+14:00:00.374606 [info ]: Started model main.stg_products
+14:00:00.374614 [debug]: Started rendering model main.stg_products
+14:00:00.374627 [info ]: Started model main.stg_employees
+14:00:00.374636 [debug]: Started rendering model main.stg_employees
+14:00:00.374647 [info ]: Started model main.stg_categories
+14:00:00.374657 [debug]: Started rendering model main.stg_categories
+14:00:00.374671 [info ]: Started model main.geographic_region_summary
+14:00:00.374681 [debug]: Started rendering model main.geographic_region_summary
+14:00:00.374692 [info ]: Started model main.geographic_revenue_with_region
+14:00:00.374698 [debug]: Started rendering model main.geographic_revenue_with_region
+14:00:00.374707 [info ]: Started model main.geographic_revenue_summary
+14:00:00.374714 [debug]: Started rendering model main.geographic_revenue_summary
+14:00:00.374724 [info ]: Started model main.customer_segment_summary
+14:00:00.374731 [debug]: Started rendering model main.customer_segment_summary
+14:00:00.374746 [info ]: Started model main.customer_repeat_summary
+14:00:00.374754 [debug]: Started rendering model main.customer_repeat_summary
+14:00:00.374764 [info ]: Started model main.customer_behavior_summary
+14:00:00.374769 [debug]: Started rendering model main.customer_behavior_summary
+14:00:00.374781 [info ]: Started model main.stg_customers
+14:00:00.374787 [debug]: Started rendering model main.stg_customers
+14:00:00.374805 [info ]: Started model main.stg_countries
+14:00:00.374814 [debug]: Started rendering model main.stg_countries
+14:00:00.374825 [info ]: Started model main.stg_cities
+14:00:00.374834 [debug]: Started rendering model main.stg_cities
+14:00:00.374845 [info ]: Started model main.sales_customer_agg
+14:00:00.374856 [debug]: Started rendering model main.sales_customer_agg
+14:00:00.374868 [info ]: Started model main.int_sales_metrics
+14:00:00.374880 [debug]: Started rendering model main.int_sales_metrics
+14:00:00.375610 [debug]: Compiled SQL for node model.fmcg_sales.int_sales_enriched at target\.lsp\compiled\fmcg_sales\models\intermediate\int_sales_enriched.sql
+14:00:00.375812 [debug]: Finished rendering [  0.00s] model main.int_sales_enriched [success]
+14:00:00.375862 [info ]: Started analyzing (26 nodes)
+14:00:00.375877 [debug]: Started analyzing model main.int_sales_enriched
+14:00:00.376012 [debug]: Compiled SQL for node model.fmcg_sales.stg_categories at target\.lsp\compiled\fmcg_sales\models\staging\stg_categories.sql
+14:00:00.376114 [debug]: Compiled SQL for node model.fmcg_sales.stg_employees at target\.lsp\compiled\fmcg_sales\models\staging\stg_employees.sql
+14:00:00.376127 [debug]: Finished rendering [  0.00s] model main.stg_categories [success]
+14:00:00.376155 [debug]: Compiled SQL for node model.fmcg_sales.stg_sales at target\.lsp\compiled\fmcg_sales\models\staging\stg_sales.sql
+14:00:00.376160 [debug]: Started analyzing model main.stg_categories
+14:00:00.376254 [debug]: Finished rendering [  0.00s] model main.stg_employees [success]
+14:00:00.376280 [debug]: Started analyzing model main.stg_employees
+14:00:00.376422 [debug]: Finished rendering [  0.00s] model main.stg_sales [success]
+14:00:00.376448 [debug]: Started analyzing model main.stg_sales
+14:00:00.376461 [debug]: Compiled SQL for node model.fmcg_sales.stg_customers at target\.lsp\compiled\fmcg_sales\models\staging\stg_customers.sql
+14:00:00.376473 [debug]: Finished analyzing [  0.00s] model main.stg_categories [success]
+14:00:00.376483 [info ]:  Succeeded [  0.00s] model main.stg_categories (view)
+14:00:00.376575 [debug]: Finished rendering [  0.00s] model main.stg_customers [success]
+14:00:00.376590 [debug]: Started analyzing model main.stg_customers
+14:00:00.376660 [debug]: Finished analyzing [  0.00s] model main.stg_sales [success]
+14:00:00.376677 [info ]:  Succeeded [  0.00s] model main.stg_sales (view)
+14:00:00.376847 [debug]: Finished analyzing [  0.00s] model main.stg_customers [success]
+14:00:00.376886 [info ]:  Succeeded [  0.00s] model main.stg_customers (view)
+14:00:00.376928 [debug]: Finished analyzing [  0.00s] model main.stg_employees [success]
+14:00:00.376942 [info ]:  Succeeded [  0.00s] model main.stg_employees (view)
+14:00:00.377470 [debug]: Compiled SQL for node model.fmcg_sales.int_sales_metrics at target\.lsp\compiled\fmcg_sales\models\intermediate\int_sales_metrics.sql
+14:00:00.377694 [debug]: Finished rendering [  0.00s] model main.int_sales_metrics [success]
+14:00:00.377731 [debug]: Started analyzing model main.int_sales_metrics
+14:00:00.378238 [debug]: Compiled SQL for node model.fmcg_sales.stg_products at target\.lsp\compiled\fmcg_sales\models\staging\stg_products.sql
+14:00:00.378510 [debug]: Started analyzing model main.stg_products
+14:00:00.378562 [debug]: Compiled SQL for node model.fmcg_sales.stg_countries at target\.lsp\compiled\fmcg_sales\models\staging\stg_countries.sql
+14:00:00.378722 [debug]: Started analyzing model main.stg_countries
+14:00:00.378749 [debug]: Finished analyzing [  0.00s] model main.stg_products [success]
+14:00:00.378753 [debug]: Finished rendering [  0.00s] model main.stg_products [success]
+14:00:00.378770 [info ]:  Succeeded [  0.00s] model main.stg_products (view)
+14:00:00.378779 [debug]: Finished rendering [  0.00s] model main.stg_countries [success]
+14:00:00.378792 [debug]: Finished analyzing [  0.00s] model main.int_sales_metrics [success]
+14:00:00.378801 [info ]:  Succeeded [  0.00s] model main.int_sales_metrics (table)
+14:00:00.378861 [debug]: Finished analyzing [  0.00s] model main.stg_countries [success]
+14:00:00.378862 [debug]: Compiled SQL for node model.fmcg_sales.stg_cities at target\.lsp\compiled\fmcg_sales\models\staging\stg_cities.sql
+14:00:00.378881 [info ]:  Succeeded [  0.00s] model main.stg_countries (view)
+14:00:00.378920 [debug]: Finished rendering [  0.00s] model main.stg_cities [success]
+14:00:00.378935 [debug]: Started analyzing model main.stg_cities
+14:00:00.379074 [debug]: Finished analyzing [  0.00s] model main.stg_cities [success]
+14:00:00.379090 [info ]:  Succeeded [  0.00s] model main.stg_cities (view)
+14:00:00.380101 [debug]: Finished analyzing [  0.00s] model main.int_sales_enriched [success]
+14:00:00.380143 [info ]:  Succeeded [  0.01s] model main.int_sales_enriched (view)
+14:00:00.382129 [debug]: Compiled SQL for node model.fmcg_sales.int_sales_monthly at target\.lsp\compiled\fmcg_sales\models\intermediate\int_sales_monthly.sql
+14:00:00.382361 [debug]: Finished rendering [  0.01s] model main.int_sales_monthly [success]
+14:00:00.382406 [debug]: Started analyzing model main.int_sales_monthly
+14:00:00.384449 [debug]: Compiled SQL for node model.fmcg_sales.monthly_revenue_change at target\.lsp\compiled\fmcg_sales\models\marts\monthly_revenue_change.sql
+14:00:00.386026 [debug]: Compiled SQL for node model.fmcg_sales.sales_person_monthly_agg at target\.lsp\compiled\fmcg_sales\models\marts\sales_person_monthly_agg.sql
+14:00:00.387280 [debug]: Finished rendering [  0.01s] model main.monthly_revenue_change [success]
+14:00:00.387338 [debug]: Started analyzing model main.monthly_revenue_change
+14:00:00.387690 [debug]: Finished analyzing [  0.01s] model main.int_sales_monthly [success]
+14:00:00.387717 [info ]:  Succeeded [  0.01s] model main.int_sales_monthly (table)
+14:00:00.387926 [debug]: Finished rendering [  0.01s] model main.sales_person_monthly_agg [success]
+14:00:00.387958 [debug]: Started analyzing model main.sales_person_monthly_agg
+14:00:00.388893 [debug]: Compiled SQL for node model.fmcg_sales.salesperson_performance_summary at target\.lsp\compiled\fmcg_sales\models\marts\salesperson_performance_summary.sql
+14:00:00.390070 [debug]: Finished rendering [  0.02s] model main.salesperson_performance_summary [success]
+14:00:00.390128 [debug]: Started analyzing model main.salesperson_performance_summary
+14:00:00.390904 [debug]: Compiled SQL for node model.fmcg_sales.product_performance_summary at target\.lsp\compiled\fmcg_sales\models\marts\product_performance_summary.sql
+14:00:00.391225 [debug]: Finished rendering [  0.02s] model main.product_performance_summary [success]
+14:00:00.391279 [debug]: Started analyzing model main.product_performance_summary
+14:00:00.392425 [debug]: Compiled SQL for node model.fmcg_sales.monthly_revenue at target\.lsp\compiled\fmcg_sales\models\marts\monthly_revenue.sql
+14:00:00.392509 [debug]: Compiled SQL for node model.fmcg_sales.sales_product_agg at target\.lsp\compiled\fmcg_sales\models\marts\sales_product_agg.sql
+14:00:00.392879 [debug]: Finished analyzing [  0.00s] model main.salesperson_performance_summary [success]
+14:00:00.392909 [info ]:  Succeeded [  0.02s] model main.salesperson_performance_summary (table)
+14:00:00.392939 [debug]: Finished analyzing [  0.00s] model main.sales_person_monthly_agg [success]
+14:00:00.392949 [info ]:  Succeeded [  0.02s] model main.sales_person_monthly_agg (table)
+14:00:00.392990 [debug]: Finished rendering [  0.02s] model main.monthly_revenue [success]
+14:00:00.393010 [debug]: Started analyzing model main.monthly_revenue
+14:00:00.393030 [debug]: Finished rendering [  0.02s] model main.sales_product_agg [success]
+14:00:00.393038 [debug]: Started analyzing model main.sales_product_agg
+14:00:00.393243 [debug]: Finished analyzing [  0.00s] model main.monthly_revenue [success]
+14:00:00.393254 [info ]:  Succeeded [  0.02s] model main.monthly_revenue (table)
+14:00:00.394523 [debug]: Finished analyzing [  0.00s] model main.product_performance_summary [success]
+14:00:00.394559 [info ]:  Succeeded [  0.02s] model main.product_performance_summary (table)
+14:00:00.394605 [debug]: Compiled SQL for node model.fmcg_sales.monthly_category_contribution_summary at target\.lsp\compiled\fmcg_sales\models\marts\monthly_category_contribution_summary.sql
+14:00:00.394891 [debug]: Compiled SQL for node model.fmcg_sales.customer_behavior_summary at target\.lsp\compiled\fmcg_sales\models\marts\customer_behavior_summary.sql
+14:00:00.394975 [debug]: Finished rendering [  0.02s] model main.monthly_category_contribution_summary [success]
+14:00:00.395013 [debug]: Started analyzing model main.monthly_category_contribution_summary
+14:00:00.395276 [debug]: Finished rendering [  0.02s] model main.customer_behavior_summary [success]
+14:00:00.395320 [debug]: Started analyzing model main.customer_behavior_summary
+14:00:00.395415 [debug]: Compiled SQL for node model.fmcg_sales.monthly_category_revenue_summary at target\.lsp\compiled\fmcg_sales\models\marts\monthly_category_revenue_summary.sql
+14:00:00.396063 [debug]: Finished analyzing [  0.00s] model main.sales_product_agg [success]
+14:00:00.396089 [info ]:  Succeeded [  0.02s] model main.sales_product_agg (table)
+14:00:00.396121 [debug]: Finished rendering [  0.02s] model main.monthly_category_revenue_summary [success]
+14:00:00.396145 [debug]: Started analyzing model main.monthly_category_revenue_summary
+14:00:00.397610 [debug]: Finished analyzing [  0.00s] model main.customer_behavior_summary [success]
+14:00:00.397643 [info ]:  Succeeded [  0.02s] model main.customer_behavior_summary (table)
+14:00:00.398184 [debug]: Finished analyzing [  0.00s] model main.monthly_category_revenue_summary [success]
+14:00:00.398209 [info ]:  Succeeded [  0.02s] model main.monthly_category_revenue_summary (table)
+14:00:00.398482 [debug]: Compiled SQL for node model.fmcg_sales.geographic_region_summary at target\.lsp\compiled\fmcg_sales\models\marts\geographic_region_summary.sql
+14:00:00.398992 [debug]: Finished rendering [  0.02s] model main.geographic_region_summary [success]
+14:00:00.399035 [debug]: Started analyzing model main.geographic_region_summary
+14:00:00.399807 [debug]: Compiled SQL for node model.fmcg_sales.salesperson_monthly_summary at target\.lsp\compiled\fmcg_sales\models\marts\salesperson_monthly_summary.sql
+14:00:00.400047 [debug]: Compiled SQL for node model.fmcg_sales.customer_repeat_summary at target\.lsp\compiled\fmcg_sales\models\marts\customer_repeat_summary.sql
+14:00:00.400688 [debug]: Compiled SQL for node model.fmcg_sales.sales_customer_agg at target\.lsp\compiled\fmcg_sales\models\marts\sales_customer_agg.sql
+14:00:00.400749 [debug]: Compiled SQL for node model.fmcg_sales.customer_segment_summary at target\.lsp\compiled\fmcg_sales\models\marts\customer_segment_summary.sql
+14:00:00.402649 [debug]: Finished rendering [  0.03s] model main.salesperson_monthly_summary [success]
+14:00:00.402679 [debug]: Compiled SQL for node model.fmcg_sales.geographic_revenue_summary at target\.lsp\compiled\fmcg_sales\models\marts\geographic_revenue_summary.sql
+14:00:00.402705 [debug]: Started analyzing model main.salesperson_monthly_summary
+14:00:00.403183 [debug]: Finished rendering [  0.03s] model main.customer_repeat_summary [success]
+14:00:00.403222 [debug]: Started analyzing model main.customer_repeat_summary
+14:00:00.403751 [debug]: Finished rendering [  0.03s] model main.sales_customer_agg [success]
+14:00:00.403791 [debug]: Started analyzing model main.sales_customer_agg
+14:00:00.403797 [debug]: Compiled SQL for node model.fmcg_sales.geographic_revenue_with_region at target\.lsp\compiled\fmcg_sales\models\marts\geographic_revenue_with_region.sql
+14:00:00.403820 [debug]: Finished rendering [  0.03s] model main.customer_segment_summary [success]
+14:00:00.403833 [debug]: Started analyzing model main.customer_segment_summary
+14:00:00.403847 [debug]: Finished rendering [  0.03s] model main.geographic_revenue_summary [success]
+14:00:00.403857 [debug]: Started analyzing model main.geographic_revenue_summary
+14:00:00.403875 [debug]: Finished analyzing [  0.00s] model main.salesperson_monthly_summary [success]
+14:00:00.403887 [info ]:  Succeeded [  0.03s] model main.salesperson_monthly_summary (table)
+14:00:00.404020 [debug]: Finished rendering [  0.03s] model main.geographic_revenue_with_region [success]
+14:00:00.404040 [info ]: Finished rendering [  0.03s] (26 nodes, 0 skipped, 0 errors)
+14:00:00.404059 [debug]: Started analyzing model main.geographic_revenue_with_region
+14:00:00.404940 [debug]: Finished analyzing [  0.00s] model main.sales_customer_agg [success]
+14:00:00.404972 [info ]:  Succeeded [  0.03s] model main.sales_customer_agg (table)
+14:00:00.406297 [debug]: Finished analyzing [  0.00s] model main.geographic_revenue_summary [success]
+14:00:00.406337 [info ]:  Succeeded [  0.03s] model main.geographic_revenue_summary (table)
+14:00:00.407058 [debug]: Finished analyzing [  0.02s] model main.monthly_revenue_change [success]
+14:00:00.407092 [info ]:  Succeeded [  0.03s] model main.monthly_revenue_change (table)
+14:00:00.408878 [debug]: Finished analyzing [  0.00s] model main.geographic_revenue_with_region [success]
+14:00:00.408921 [info ]:  Succeeded [  0.03s] model main.geographic_revenue_with_region (table)
+14:00:00.409412 [debug]: Finished analyzing [  0.01s] model main.monthly_category_contribution_summary [success]
+14:00:00.409443 [info ]:  Succeeded [  0.03s] model main.monthly_category_contribution_summary (table)
+14:00:00.409472 [debug]: Finished analyzing [  0.01s] model main.geographic_region_summary [success]
+14:00:00.409487 [info ]:  Succeeded [  0.03s] model main.geographic_region_summary (table)
+14:00:00.409508 [debug]: Finished analyzing [  0.01s] model main.customer_repeat_summary [success]
+14:00:00.409521 [info ]:  Succeeded [  0.03s] model main.customer_repeat_summary (table)
+14:00:00.409540 [debug]: Finished analyzing [  0.01s] model main.customer_segment_summary [success]
+14:00:00.409553 [info ]: Finished analyzing [  0.03s] (26 nodes, 0 skipped, 0 errors)
+14:00:00.409563 [info ]:  Succeeded [  0.03s] model main.customer_segment_summary (table)
+14:00:00.416038 [info ]: Started scheduling
+14:00:00.416151 [info ]: Finished scheduling [  0.00s]
+14:00:00.416242 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'duckdb_dev' [173ms]
+Processed: 26 models
+Summary: 26 total | 26 success
+14:00:00.416349 [info ]: Cached model count updated: 26 models (accurate)
+==================== 2026-09-07T13:18:18.081163Z | 00000000-0000-0000-0000-000000000000 ====================
+==================== 2026-09-07T13:18:18.090698Z | 72406ebf-6142-4e98-abf3-691eb734e624 ====================
+13:18:18.091284 [info ]: Starting dbt LSP server
+13:18:18.093106 [info ]: Connecting to LSP client on port 8000
+13:18:18.096619 [info ]: Successfully connected to LSP client
+13:18:18.097046 [info ]: Creating LSP service...
+13:18:18.106104 [info ]: Creating LSP server...
+13:18:18.106128 [info ]: Starting LSP server...
