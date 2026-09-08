@@ -21,4 +21,10 @@ profiles.yml.example
 requirements.txt
 
 
+# Local virtual environments
+.venv-dbt/
+.venv-duckdb/
 
+# Local DuckDB database
+*.duckdb
+*.duckdb.wal
