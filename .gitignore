@@ -20,8 +20,6 @@ requirements.txt
 *.duckdb.wal
 
 
-
-
 # ZCode workspace state
 .zcode/
 dbt_internal_packages/
