@@ -1,0 +1,4 @@
+ProductID,ProductName,Price,CategoryID,Class,ModifyDate,Resistant,IsAllergic,VitalityDays
+200,Coffee,10.00,1,A,2018-01-01,No,No,365
+201,Chips,5.00,2,B,2018-01-01,No,No,180
+202,Tea,8.00,1,A,2018-01-01,No,No,365

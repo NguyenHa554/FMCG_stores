@@ -1,0 +1,4 @@
+CityID,CityName,Zipcode,CountryID
+1,New York,10001,1
+2,Los Angeles,90001,1
+3,Testville,00000,1

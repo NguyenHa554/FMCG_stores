@@ -1,0 +1,4 @@
+CustomerID,FirstName,MiddleInitial,LastName,CityID,Address
+100,Alice,A,Adams,1,1 Test Street
+101,Bob,B,Brown,2,2 Test Street
+102,Carol,C,Clark,3,3 Test Street

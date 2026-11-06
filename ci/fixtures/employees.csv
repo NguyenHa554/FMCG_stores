@@ -1,0 +1,3 @@
+EmployeeID,FirstName,MiddleInitial,LastName,BirthDate,Gender,CityID,HireDate
+10,Emma,E,Stone,1985-02-10,F,1,2010-04-12
+11,Liam,L,Jones,1982-08-20,M,2,2011-06-15
