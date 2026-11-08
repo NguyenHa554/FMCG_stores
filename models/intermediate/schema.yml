@@ -1,0 +1,125 @@
+version: 2
+
+models:
+  - name: int_sales_metrics
+    description: Transaction-level sales metrics with corrected revenue.
+    columns:
+      - name: SalesID
+        data_tests:
+          - not_null
+          - unique
+      - name: ProductID
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('int_dim_product')
+                field: ProductID
+      - name: CustomerID
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('int_dim_customer')
+                field: CustomerID
+      - name: SalesPersonID
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('int_dim_salesperson')
+                field: SalesPersonID
+      - name: Revenue
+        data_tests:
+          - not_null
+
+  - name: int_dim_product
+    description: Product attributes enriched with category.
+    columns:
+      - name: ProductID
+        data_tests:
+          - not_null
+          - unique
+
+  - name: int_dim_customer
+    description: Customer attributes enriched with city and country.
+    columns:
+      - name: CustomerID
+        data_tests:
+          - not_null
+          - unique
+
+  - name: int_dim_salesperson
+    description: Salesperson attributes used by monthly performance models.
+    columns:
+      - name: SalesPersonID
+        data_tests:
+          - not_null
+          - unique
+
+  - name: int_dim_geography
+    description: City and country lookup used by customer and geographic models.
+    columns:
+      - name: CityID
+        data_tests:
+          - not_null
+          - unique
+
+  - name: int_revenue
+    description: Monthly category metrics, monthly totals, growth, and data completeness.
+    columns:
+      - name: mart_revenue_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: int_product
+    description: Product-level performance metrics.
+    columns:
+      - name: ProductID
+        data_tests:
+          - not_null
+          - unique
+
+  - name: int_customer
+    description: Customer metrics with repeat status and AOV-frequency segmentation.
+    columns:
+      - name: CustomerID
+        data_tests:
+          - not_null
+          - unique
+      - name: customer_type
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Repeat Customers', 'One-time Buyers']
+      - name: customer_segment
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - 'VIP Customers'
+                  - 'Premium Occasional Customers'
+                  - 'Loyal Low-Value Customers'
+                  - 'Regular Customers'
+
+  - name: int_salesperson
+    description: Monthly salesperson metrics with corrected average revenue per transaction.
+    columns:
+      - name: mart_salesperson_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: int_geography
+    description: City-level sales metrics and approximate US region mapping.
+    columns:
+      - name: CityID
+        data_tests:
+          - not_null
+          - unique
+      - name: USRegion
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['West', 'Midwest', 'South', 'Northeast', 'Other / Unknown']
