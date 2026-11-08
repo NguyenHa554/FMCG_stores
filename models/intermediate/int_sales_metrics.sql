@@ -17,6 +17,6 @@ select
     s.Quantity,
     s.Discount,
     s.Quantity * p.Price * (1 - s.Discount) as Revenue
-from {{ source('raw', 'sales') }} s
-join {{ source('raw', 'products') }} p
+from {{ ref('stg_sales') }} s
+join {{ ref('stg_products') }} p
     on s.ProductID = p.ProductID
