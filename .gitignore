@@ -13,14 +13,12 @@ dbt_packages/
 .venv/
 .venv-dbt/
 .venv-duckdb/
+__pycache__/
+*.py[cod]
 
 # DuckDB warehouse files
 *.duckdb
 *.duckdb.wal
-
-# Other
-profiles.yml.example
-requirements.txt
 
 # ZCode workspace state
 .zcode/

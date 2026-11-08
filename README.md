@@ -52,19 +52,21 @@ The transformation warehouse is **dbt on DuckDB** (migrated from MySQL). All sum
 ```text
 Dataset/*.csv  --scripts/load_raw.py-->  fmcg.duckdb (raw schema)
                                               |
-                            dbt: staging (views) -> intermediate (views) -> marts (tables, main schema)
+                    dbt: staging (views) -> intermediate (views/tables) -> 5 Power BI marts
 ```
 
-The full build (25 models + 62 data tests) runs in about 10 seconds; the same pipeline took ~9 minutes for a single model on MySQL.
+The full build (22 models + 74 data tests) runs in about 10 seconds; the same pipeline took ~9 minutes for a single model on MySQL.
 
 ### Setup
 
 ```bash
 py -3.12 -m venv .venv-duckdb
-.venv-duckdb/Scripts/pip install dbt-duckdb   # dbt-core 1.12 + dbt-duckdb 1.11
+.venv-duckdb/Scripts/pip install -r requirements.txt
 ```
 
-The dbt profile is `fmcg_sales` / target `duckdb_dev` in `~/.dbt/profiles.yml`, pointing at `fmcg.duckdb` in the project root.
+Copy `profiles.yml.example` to `~/.dbt/profiles.yml`. The profile is
+`fmcg_sales` / target `duckdb_dev` and points at `fmcg.duckdb` in the project
+root by default. Set `FMCG_DB_PATH` to use a different database path.
 
 ### Run
 
@@ -82,10 +84,60 @@ The dbt profile is `fmcg_sales` / target `duckdb_dev` in `~/.dbt/profiles.yml`, 
 
 Notes:
 
-- Raw tables live in the `raw` schema (`raw.sales`, `raw.products`, ...); marts land in `main`.
+- Raw tables live in the `raw` schema (`raw.sales`, `raw.products`, ...). The
+  five published marts land in `main` as `mart_revenue`, `mart_product`,
+  `mart_customer`, `mart_salesperson`, and `mart_geography`.
 - DuckDB allows one writer at a time: don't run two `dbt build`s concurrently, and avoid refreshing Power BI while building.
 - `fmcg.duckdb` / `*.duckdb.wal` are gitignored; rebuild them any time with the two commands above.
+- When upgrading an existing warehouse from the former multi-table mart layout,
+  recreate `fmcg.duckdb` once before loading and building. dbt does not remove
+  relations automatically when their model files are deleted.
 - The legacy manual pipeline in `sql/` and the MySQL server are kept for reference/rollback only (see tag `mysql-baseline`).
+
+## CI/CD with GitHub Actions
+
+The workflow in `.github/workflows/ci-cd.yml` has three stages:
+
+1. Every pull request and push to `main` loads the small synthetic dataset in
+   `ci/fixtures/`, runs `dbt build`, checks deterministic business results, and
+   generates dbt documentation. This stage does not use repository secrets.
+2. A successful `main` build downloads the full CSV dataset, verifies its
+   SHA-256 checksum, builds a fresh DuckDB warehouse, and uploads the database
+   with build metadata as a seven-day workflow artifact.
+3. The same successful release publishes the generated dbt documentation to
+   GitHub Pages. A failed release does not replace the currently published site.
+
+Full-data delivery is disabled until all of the following GitHub repository
+settings are configured:
+
+1. Create a ZIP archive containing exactly these files at the archive root:
+   `sales.csv`, `products.csv`, `categories.csv`, `customers.csv`, `cities.csv`,
+   `countries.csv`, and `employees.csv`.
+2. Host the ZIP at a private HTTPS download URL that GitHub Actions can access.
+3. Add an Actions repository secret named `FMCG_DATASET_URL` containing that
+   URL.
+4. Add an Actions repository variable named `FMCG_DATASET_SHA256` containing
+   the archive's 64-character SHA-256 digest. On Windows, obtain it with
+   `Get-FileHash dataset.zip -Algorithm SHA256`.
+5. In **Settings -> Pages**, select **GitHub Actions** as the Pages source.
+6. Add the Actions repository variable `FMCG_RELEASE_ENABLED` with the value
+   `true`.
+
+The release can also be rerun manually from the Actions tab on `main`. Because
+this repository is public, users with repository read access can download its
+workflow artifacts. Only enable the release after confirming that distributing
+the resulting warehouse is permitted.
+
+For branch protection, require the `CI/CD / Validate dbt project` status check
+before merging into `main`. To reproduce the validation locally in PowerShell:
+
+```powershell
+$env:FMCG_DB_PATH = "$PWD/fmcg-ci.duckdb"
+.venv-duckdb/Scripts/python scripts/load_raw.py --csv-dir ci/fixtures
+.venv-duckdb/Scripts/dbt build --profiles-dir ci
+.venv-duckdb/Scripts/python scripts/assert_ci_results.py --db-path $env:FMCG_DB_PATH
+.venv-duckdb/Scripts/dbt docs generate --profiles-dir ci --static
+```
 
 ## SQL Summary Pipeline (legacy, MySQL)
 
@@ -120,23 +172,107 @@ sql/5.2.geographic_region_summary.sql
 
 Power BI dashboards are stored in `dashboards/`.
 
-| Dashboard | Business Focus |
-|---|---|
-| `revenue change.pbix` | Revenue trend and category contribution |
-| `Product Allocation and Classification.pbix` | Product ranking, product class, and quantity vs revenue |
-| `Customer_behavior.pbix` | Customer segmentation, repeat customers, AOV, basket size |
-| `Salepersons summary.pbix` | Salesperson revenue, transactions, and monthly trend |
-| `Geographic_summary.pbix` | City, region, and market concentration analysis |
+| Dashboard | Power BI table | Business focus |
+|---|---|---|
+| `revenue change.pbix` | `main.mart_revenue` | Revenue trend and category contribution |
+| `Product Allocation and Classification.pbix` | `main.mart_product` | Product ranking, product class, and quantity vs revenue |
+| `Customer_behavior.pbix` | `main.mart_customer` | Customer segmentation, repeat customers, AOV, basket size |
+| `Salepersons summary.pbix` | `main.mart_salesperson` | Salesperson revenue, transactions, and monthly trend |
+| `Geographic_summary.pbix` | `main.mart_geography` | City, region, and market concentration analysis |
 
 Dashboard screenshots are available in `dashboards/screenshots/`.
 
-### Migrating dashboards to DuckDB (later)
+### Power BI measures
+
+Create measures from the additive columns instead of summing stored ratio or
+monthly-total columns. Suggested DAX measures are:
+
+```DAX
+-- mart_revenue
+Revenue = SUM(mart_revenue[category_revenue])
+Revenue Growth % = MAX(mart_revenue[growth_rate_pct])
+Category Contribution % =
+    DIVIDE(
+        [Revenue],
+        CALCULATE([Revenue], REMOVEFILTERS(mart_revenue[CategoryName]))
+    )
+
+-- mart_product
+Product Revenue = SUM(mart_product[total_revenue])
+Product Revenue per Unit =
+    DIVIDE([Product Revenue], SUM(mart_product[total_quantity]))
+
+-- mart_customer
+Customer Count = DISTINCTCOUNT(mart_customer[CustomerID])
+Customer Revenue = SUM(mart_customer[total_revenue])
+Customer AOV =
+    DIVIDE([Customer Revenue], SUM(mart_customer[total_transactions]))
+Customer Share % =
+    DIVIDE(
+        [Customer Count],
+        CALCULATE(
+            [Customer Count],
+            REMOVEFILTERS(mart_customer[customer_segment])
+        )
+    )
+Customer Revenue Share % =
+    DIVIDE(
+        [Customer Revenue],
+        CALCULATE(
+            [Customer Revenue],
+            REMOVEFILTERS(mart_customer[customer_segment])
+        )
+    )
+
+-- mart_salesperson
+Salesperson Revenue = SUM(mart_salesperson[total_revenue])
+Salesperson Average Revenue per Transaction =
+    DIVIDE(
+        [Salesperson Revenue],
+        SUM(mart_salesperson[total_transactions])
+    )
+
+-- mart_geography
+Geographic Revenue = SUM(mart_geography[total_revenue])
+Geographic Revenue per Customer =
+    DIVIDE([Geographic Revenue], SUM(mart_geography[total_customers]))
+Geographic Revenue Share % =
+    DIVIDE(
+        [Geographic Revenue],
+        CALCULATE(
+            [Geographic Revenue],
+            REMOVEFILTERS(mart_geography[USRegion])
+        )
+    )
+Top 3 City Revenue =
+    VAR TopCities =
+        TOPN(
+            3,
+            ALLSELECTED(mart_geography[CityID]),
+            CALCULATE([Geographic Revenue]),
+            DESC
+        )
+    RETURN
+        CALCULATE([Geographic Revenue], KEEPFILTERS(TopCities))
+Top 3 City Revenue % =
+    DIVIDE([Top 3 City Revenue], [Geographic Revenue])
+```
+
+`monthly_revenue`, `monthly_quantity`, and `monthly_transactions` repeat on
+each category row in `mart_revenue`. Use `MAX` when displaying one of those
+stored monthly totals, or sum the corresponding category columns. Use
+`is_partial_month` to exclude or label the final incomplete month.
+
+The top-three city measures respect report slicers through `ALLSELECTED`, so a
+country or region selection recalculates the ranking inside that selection.
+
+### Migrating dashboards to DuckDB
 
 The dashboards currently keep refreshing from the legacy MySQL tables. When ready to move them onto `fmcg.duckdb`:
 
 1. Install the DuckDB ODBC driver (Windows x64) from `github.com/duckdb/duckdb-odbc` releases.
 2. Create a System DSN (ODBC Data Sources (64-bit)) named e.g. `FMCG DuckDB`, pointing the database at the project's `fmcg.duckdb`.
-3. In each PBIX: Power Query -> replace the MySQL source with `Get Data -> ODBC -> FMCG DuckDB`, then re-map tables. Mart table names are identical (`main.monthly_revenue`, `main.customer_behavior_summary`, ...), so remapping is mechanical.
+3. In each PBIX: Power Query -> replace the MySQL source with `Get Data -> ODBC -> FMCG DuckDB`, then map the dashboard to the single `main.mart_*` table listed above.
 4. Caveat: DuckDB is single-writer. Close/finish dashboard refreshes before running `dbt build`, or export marts to Parquet and point Power BI at the files instead.
 
 ## Business Insights
