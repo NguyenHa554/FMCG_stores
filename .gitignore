@@ -5,6 +5,7 @@ Dataset/*.csv
 
 # dbt local files
 profiles.yml
+!ci/profiles.yml
 target/
 logs/
 dbt_packages/

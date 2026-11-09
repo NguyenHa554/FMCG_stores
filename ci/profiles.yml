@@ -1,0 +1,7 @@
+fmcg_sales:
+  target: ci
+  outputs:
+    ci:
+      type: duckdb
+      path: "{{ env_var('FMCG_DB_PATH') }}"
+      threads: 4
