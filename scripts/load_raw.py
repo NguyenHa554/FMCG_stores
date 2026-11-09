@@ -1,18 +1,18 @@
-"""One-time loader: Dataset/*.csv -> raw schema in fmcg.duckdb.
+"""Load source CSV files into the raw schema of a DuckDB database.
 
 Replaces Dataset/upload_*.sql (MySQL LOAD DATA INFILE). Safe to re-run:
 every table is CREATE OR REPLACE, so raw always matches the CSVs.
 
-Run: .venv-duckdb/Scripts/python scripts/load_raw.py
+Run: python scripts/load_raw.py [--csv-dir PATH] [--db-path PATH]
 """
 
+import argparse
+import os
 from pathlib import Path
 
 import duckdb
 
 PROJECT_DIR = Path(__file__).resolve().parent.parent
-DB_PATH = PROJECT_DIR / "fmcg.duckdb"
-CSV_DIR = PROJECT_DIR / "Dataset"
 
 # column name -> DuckDB type, in CSV column order
 TABLES = {
@@ -71,25 +71,62 @@ TABLES = {
 }
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--csv-dir",
+        type=Path,
+        default=Path(os.environ.get("FMCG_CSV_DIR", PROJECT_DIR / "Dataset")),
+        help="directory containing the seven source CSV files",
+    )
+    parser.add_argument(
+        "--db-path",
+        type=Path,
+        default=Path(os.environ.get("FMCG_DB_PATH", PROJECT_DIR / "fmcg.duckdb")),
+        help="DuckDB database to create or update",
+    )
+    return parser.parse_args()
+
+
 def main() -> None:
-    con = duckdb.connect(str(DB_PATH))
-    con.execute("CREATE SCHEMA IF NOT EXISTS raw")
-    for table, columns in TABLES.items():
-        cols_sql = ", ".join(f"'{name}': '{dtype}'" for name, dtype in columns.items())
-        csv_path = (CSV_DIR / f"{table}.csv").as_posix()
-        con.execute(
-            f"""
-            CREATE OR REPLACE TABLE raw.{table} AS
-            SELECT * FROM read_csv(
-                '{csv_path}',
-                header = true,
-                columns = {{{cols_sql}}}
+    args = parse_args()
+    csv_dir = args.csv_dir.resolve()
+    db_path = args.db_path.resolve()
+
+    missing = [csv_dir / f"{table}.csv" for table in TABLES]
+    missing = [path for path in missing if not path.is_file()]
+    if missing:
+        names = ", ".join(path.name for path in missing)
+        raise SystemExit(f"Missing source CSV files in {csv_dir}: {names}")
+
+    db_path.parent.mkdir(parents=True, exist_ok=True)
+    con = duckdb.connect(str(db_path))
+    try:
+        con.execute("CREATE SCHEMA IF NOT EXISTS raw")
+        for table, columns in TABLES.items():
+            cols_sql = ", ".join(
+                f"'{name}': '{dtype}'" for name, dtype in columns.items()
             )
-            """
-        )
-        count = con.execute(f"SELECT count(*) FROM raw.{table}").fetchone()[0]
-        print(f"raw.{table}: {count:,} rows")
-    con.close()
+            csv_path = str(csv_dir / f"{table}.csv")
+            con.execute(
+                f"""
+                CREATE OR REPLACE TABLE raw.{table} AS
+                SELECT * FROM read_csv(
+                    ?,
+                    header = true,
+                    columns = {{{cols_sql}}}
+                )
+                """,
+                [csv_path],
+            )
+            count = con.execute(f"SELECT count(*) FROM raw.{table}").fetchone()[0]
+            if count == 0:
+                raise RuntimeError(f"raw.{table} is empty; refusing to continue")
+            print(f"raw.{table}: {count:,} rows")
+    finally:
+        con.close()
+
+    print(f"Loaded raw data into {db_path}")
 
 
 if __name__ == "__main__":

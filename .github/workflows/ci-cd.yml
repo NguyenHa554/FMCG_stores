@@ -1,0 +1,158 @@
+name: CI/CD
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate dbt project
+    runs-on: ubuntu-latest
+    env:
+      FMCG_DB_PATH: ${{ runner.temp }}/fmcg-ci.duckdb
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+
+      - name: Load synthetic source data
+        run: python scripts/load_raw.py --csv-dir ci/fixtures
+
+      - name: Build and test dbt models
+        run: dbt build --profiles-dir ci
+
+      - name: Check deterministic fixture results
+        run: python scripts/assert_ci_results.py --db-path "$FMCG_DB_PATH"
+
+      - name: Generate dbt documentation
+        run: dbt docs generate --profiles-dir ci --static
+
+      - name: Upload diagnostics on failure
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: dbt-diagnostics-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            target/manifest.json
+            target/run_results.json
+            logs/dbt.log
+          if-no-files-found: ignore
+          retention-days: 7
+
+  release:
+    name: Build release warehouse
+    needs: validate
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      vars.FMCG_RELEASE_ENABLED == 'true' &&
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      FMCG_DATASET_URL: ${{ secrets.FMCG_DATASET_URL }}
+      FMCG_DATASET_SHA256: ${{ vars.FMCG_DATASET_SHA256 }}
+      FMCG_DB_PATH: ${{ runner.temp }}/fmcg-${{ github.sha }}.duckdb
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+
+      - name: Download and verify full dataset
+        run: python scripts/download_dataset.py --output-dir "$RUNNER_TEMP/Dataset"
+
+      - name: Load full source data
+        run: python scripts/load_raw.py --csv-dir "$RUNNER_TEMP/Dataset"
+
+      - name: Build and test release warehouse
+        run: dbt build --profiles-dir ci
+
+      - name: Generate release documentation
+        run: dbt docs generate --profiles-dir ci --static
+
+      - name: Validate release warehouse
+        run: python scripts/validate_warehouse.py --db-path "$FMCG_DB_PATH"
+
+      - name: Package release outputs
+        shell: bash
+        run: |
+          mkdir -p release site
+          cp "$FMCG_DB_PATH" release/fmcg.duckdb
+          sha256sum release/fmcg.duckdb > release/fmcg.duckdb.sha256
+          {
+            printf 'commit=%s\n' "$GITHUB_SHA"
+            printf 'built_at_utc=%s\n' "$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            printf 'dbt_core=1.12.3\n'
+            printf 'dbt_duckdb=1.11.0\n'
+            printf 'duckdb=1.5.5\n'
+          } > release/build-info.txt
+          cp target/static_index.html site/index.html
+
+      - name: Upload DuckDB release artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: fmcg-duckdb-${{ github.sha }}
+          path: release/
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Upload documentation for GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/
+
+      - name: Upload release diagnostics on failure
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: release-diagnostics-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            target/manifest.json
+            target/run_results.json
+            logs/dbt.log
+          if-no-files-found: ignore
+          retention-days: 7
+
+  deploy-pages:
+    name: Deploy dbt documentation
+    needs: release
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
