@@ -1,3 +1,5 @@
+{{ config(materialized='view') }}
+
 with city_metrics as (
     select
         CityID,

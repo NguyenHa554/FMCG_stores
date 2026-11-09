@@ -1,8 +1,4 @@
-{{
-    config(
-        materialized='table'
-    )
-}}
+{{ config(materialized='table') }}
 
 -- Narrow transaction-level fact table for analytics.
 -- This materializes the product join and revenue calculation once so downstream

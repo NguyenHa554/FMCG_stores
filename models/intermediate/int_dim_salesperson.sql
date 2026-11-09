@@ -1,3 +1,5 @@
+{{ config(materialized='view') }}
+
 select
     EmployeeID as SalesPersonID,
     concat(FirstName, ' ', LastName) as SalesPersonName,

@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 select
     mart_revenue_id,
     SalesMonth,

@@ -1,3 +1,5 @@
+{{ config(materialized='view') }}
+
 select
     c.CustomerID,
     concat(c.FirstName, ' ', c.LastName) as CustomerName,
