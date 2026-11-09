@@ -1,3 +1,5 @@
+{{ config(materialized='view') }}
+
 select
     ci.CityID,
     ci.CityName,

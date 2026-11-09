@@ -1,3 +1,5 @@
+{{ config(materialized='view') }}
+
 select
     p.ProductID,
     p.ProductName,

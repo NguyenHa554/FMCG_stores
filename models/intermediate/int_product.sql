@@ -1,3 +1,5 @@
+{{ config(materialized='view') }}
+
 with product_sales as (
     select
         ProductID,

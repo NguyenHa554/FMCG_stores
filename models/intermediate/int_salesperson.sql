@@ -1,3 +1,5 @@
+{{ config(materialized='view') }}
+
 with salesperson_month as (
     select
         SalesMonth,

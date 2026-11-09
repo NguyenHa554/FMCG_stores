@@ -1,3 +1,5 @@
+{{ config(materialized='view') }}
+
 with category_month as (
     select
         s.SalesMonth,
